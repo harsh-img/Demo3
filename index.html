@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishita Sharma 👑 | To My Favorite Bestie in the Universe ✨</title>
+    <meta name="description" content="A special appreciation SPA page for Nishita Sharma — Founder of Fit Foundation, Taekwondo fighter, traveler, and bestie!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Sacramento&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        /* ==========================================================================
+           1. DESIGN SYSTEM & CSS VARIABLES
+           ========================================================================== */
+        :root {
+            --primary: #ff2a6d;
+            --primary-hover: #ff0055;
+            --primary-glow: rgba(255, 42, 109, 0.4);
+            --secondary: #05d9e8;
+            --accent-gold: #ffb703;
+            --accent-purple: #d800bb;
+            --bg-dark: #0b0719;
+            --bg-card: rgba(25, 16, 45, 0.7);
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            --border-glass: rgba(5, 217, 232, 0.25);
+            --text-main: #f8f9fa;
+            --text-muted: #c3b7db;
+            --font-title: 'Playfair Display', Georgia, serif;
+            --font-script: 'Dancing Script', 'Sacramento', cursive;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --shadow-glow: 0 10px 30px rgba(255, 42, 109, 0.35);
+            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+            --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.65;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Canvas Particle Background */
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 5px;
+        }
+
+        /* Utility Layouts */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 95px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 20px;
+            background: rgba(5, 217, 232, 0.12);
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            color: var(--secondary);
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+            animation: pulse-glow 2.5s infinite alternate;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, var(--secondary) 50%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Card Base */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-glass);
+            transition: var(--transition-smooth);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(5, 217, 232, 0.45);
+            box-shadow: 0 12px 40px rgba(5, 217, 232, 0.2);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.05rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            color: #ffffff;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(255, 42, 109, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--text-main);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Keyframes */
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(5, 217, 232, 0.2); }
+            100% { box-shadow: 0 0 25px rgba(255, 42, 109, 0.5); }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.12); }
+        }
+
+        /* ==========================================================================
+           2. NAVBAR
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px);
+            max-width: 1150px;
+            padding: 12px 28px;
+            background: rgba(11, 7, 25, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-logo {
+            font-family: var(--font-script);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo i {
+            color: var(--primary);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 1.1rem;
+        }
+
+        .icon-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* ==========================================================================
+           3. HERO SECTION & BADGES FOR NISHITA SHARMA
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            padding-top: 150px;
+            padding-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* UNCROPPED HERO AVATAR CONTAINER */
+        .hero-avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero-avatar-card {
+            width: 210px;
+            height: 250px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 3px solid var(--secondary);
+            padding: 8px;
+            box-shadow: 0 0 40px var(--primary-glow);
+            animation: floatSlow 4s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* CRITICAL: UNCROPPED DISPLAY */
+        .hero-avatar-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Guarantee NO cutting/cropping */
+            border-radius: 14px;
+        }
+
+        .hero-avatar-crown {
+            position: absolute;
+            top: -24px;
+            right: -10px;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            transform: rotate(20deg);
+            filter: drop-shadow(0 4px 12px rgba(255, 183, 3, 0.6));
+            animation: heartbeat 2s infinite;
+        }
+
+        .hero-title {
+            font-family: var(--font-title);
+            font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero-title span.name {
+            font-family: var(--font-script);
+            color: var(--secondary);
+            font-size: 1.25em;
+            display: inline-block;
+            text-shadow: 0 0 25px rgba(5, 217, 232, 0.6);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Identity Badges Grid */
+        .identity-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .id-tag {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--border-glass);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(8px);
+        }
+
+        .id-tag i {
+            color: var(--accent-gold);
+        }
+
+        /* Live Meeting Counter (2 Days Ago Counter!) */
+        .timer-card {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 24px;
+            margin: 30px auto 40px auto;
+            max-width: 700px;
+        }
+
+        .timer-unit {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 16px 12px;
+            border: 1px solid rgba(5, 217, 232, 0.15);
+        }
+
+        .timer-num {
+            font-family: var(--font-title);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .timer-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================================================
+           4. SECRET BESTIE LETTER
+           ========================================================================== */
+        .envelope-wrapper {
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .envelope-card {
+            background: linear-gradient(135deg, #1b0e30 0%, #0e071c 100%);
+            border: 2px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 45px 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transition: var(--transition-smooth);
+        }
+
+        .wax-seal {
+            width: 85px;
+            height: 85px;
+            background: linear-gradient(135deg, #ff2a6d 0%, #d800bb 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(255, 42, 109, 0.6);
+            border: 3px dashed var(--accent-gold);
+            color: #ffffff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .wax-seal:hover {
+            transform: scale(1.15) rotate(12deg);
+        }
+
+        .letter-content {
+            display: none;
+            text-align: left;
+            background: #fffdf9;
+            color: #2b1b17;
+            padding: 38px;
+            border-radius: 14px;
+            margin-top: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .letter-salutation {
+            font-family: var(--font-script);
+            font-size: 2.4rem;
+            color: #c1121f;
+            margin-bottom: 15px;
+        }
+
+        .letter-body p {
+            margin-bottom: 16px;
+            color: #3d261d;
+        }
+
+        .letter-ps {
+            background: #ffe6eb;
+            padding: 14px 18px;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.98rem;
+            font-style: italic;
+            color: #800f2f;
+            margin-top: 22px;
+        }
+
+        .letter-sign {
+            text-align: right;
+            font-family: var(--font-script);
+            font-size: 2.4rem;
+            color: #c1121f;
+            margin-top: 25px;
+        }
+
+        /* ==========================================================================
+           5. UNCROPPED POLAROID MEMORY GALLERY (ZERO CUTTING GUARANTEE)
+           ========================================================================== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .polaroid-card {
+            background: #ffffff;
+            padding: 16px 16px 24px 16px;
+            border-radius: 6px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: var(--transition-smooth);
+            position: relative;
+            cursor: pointer;
+            transform-origin: center;
+        }
+
+        .polaroid-card:nth-child(odd) { transform: rotate(-2.5deg); }
+        .polaroid-card:nth-child(even) { transform: rotate(2.5deg); }
+        .polaroid-card:nth-child(3n) { transform: rotate(-1.2deg); }
+
+        .polaroid-card:hover {
+            transform: scale(1.05) rotate(0deg) translateY(-10px) !important;
+            z-index: 10;
+            box-shadow: 0 25px 50px rgba(5, 217, 232, 0.4);
+        }
+
+        .polaroid-tape {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 26px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        /* CRITICAL CONTAINER DESIGN FOR UNCROPPED IMAGES */
+        .polaroid-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 320px; /* Generous height */
+            background: #150d26; /* Elegant dark backdrop inside frame */
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            overflow: hidden;
+        }
+
+        /* CRITICAL: NO CUTTING / NO CROPPING (`object-fit: contain`) */
+        .polaroid-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Full image visible guaranteed */
+            border-radius: 4px;
+            transition: transform 0.4s ease;
+        }
+
+        .polaroid-card:hover .polaroid-img {
+            transform: scale(1.04);
+        }
+
+        .polaroid-caption {
+            font-family: var(--font-script);
+            font-size: 1.55rem;
+            color: #2b1b17;
+            text-align: center;
+            margin-top: 14px;
+            font-weight: 700;
+        }
+
+        .polaroid-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-family: var(--font-body);
+            background: #e0f7fa;
+            color: #0077b6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(8, 4, 18, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-content {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            position: relative;
+            color: #2b1b17;
+        }
+
+        /* FULL LIGHTBOX UNCROPPED IMAGE */
+        .lightbox-img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #0f0a1c;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        /* ==========================================================================
+           6. NISHITA'S BADASS & FUNNY FLIP CARDS
+           ========================================================================== */
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .flip-card {
+            height: 250px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front, .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: var(--radius-lg);
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-glass);
+        }
+
+        .flip-front {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+        }
+
+        .flip-front i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+
+        .flip-front h3 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            font-family: var(--font-title);
+        }
+
+        .flip-back {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+            color: white;
+            transform: rotateY(180deg);
+            box-shadow: 0 10px 30px rgba(255, 42, 109, 0.4);
+        }
+
+        .flip-back p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           7. BESTIE VIBE-O-METER 3000
+           ========================================================================== */
+        .love-meter-box {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 45px 30px;
+            text-align: center;
+        }
+
+        .meter-dial-container {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .meter-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 12px solid rgba(255, 255, 255, 0.1);
+            border-top: 12px solid var(--primary);
+            border-right: 12px solid var(--secondary);
+            border-left: 12px solid var(--accent-gold);
+            animation: spinSlow 20s linear infinite;
+        }
+
+        @keyframes spinSlow {
+            100% { transform: rotate(360deg); }
+        }
+
+        .meter-display {
+            position: absolute;
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .meter-sub {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+        }
+
+        .meter-status-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            min-height: 36px;
+        }
+
+        /* ==========================================================================
+           8. REDEEMABLE BESTIE COUPONS FOR NISHITA
+           ========================================================================== */
+        .coupons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .coupon-card {
+            background: linear-gradient(135deg, rgba(35, 18, 55, 0.85) 0%, rgba(15, 7, 28, 0.95) 100%);
+            border: 2px dashed var(--secondary);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+
+        .coupon-card.redeemed {
+            opacity: 0.65;
+            border-color: #6c757d;
+        }
+
+        .coupon-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .coupon-badge {
+            background: rgba(5, 217, 232, 0.2);
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .coupon-title {
+            font-family: var(--font-title);
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .coupon-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .coupon-stamp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg) scale(0);
+            border: 3px solid var(--primary);
+            color: var(--primary);
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            font-weight: 800;
+            padding: 8px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            pointer-events: none;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(11, 7, 25, 0.9);
+            z-index: 5;
+        }
+
+        .coupon-card.redeemed .coupon-stamp {
+            transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+        }
+
+        /* ==========================================================================
+           9. THE BESTIE PROPOSAL ("BESTIES FOR LIFE?")
+           ========================================================================== */
+        .proposal-section {
+            text-align: center;
+            padding: 110px 0;
+            background: radial-gradient(circle at center, rgba(5, 217, 232, 0.15) 0%, transparent 70%);
+        }
+
+        .proposal-box {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .proposal-title {
+            font-family: var(--font-script);
+            font-size: clamp(3rem, 6vw, 4.8rem);
+            color: var(--secondary);
+            margin-bottom: 15px;
+            text-shadow: 0 0 25px rgba(5, 217, 232, 0.5);
+        }
+
+        .proposal-text {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 45px;
+        }
+
+        .proposal-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            position: relative;
+            min-height: 80px;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #05d9e8 0%, #0077b6 100%);
+            padding: 16px 48px;
+            font-size: 1.3rem;
+            box-shadow: 0 10px 30px rgba(5, 217, 232, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(5, 217, 232, 0.7);
+        }
+
+        .btn-no {
+            position: relative;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            border: 1px solid var(--border-glass);
+            padding: 16px 36px;
+            font-size: 1.1rem;
+        }
+
+        /* Certificate Modal */
+        .certificate-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(8, 4, 18, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .certificate-modal.active {
+            display: flex;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .certificate-card {
+            background: #fffdf9;
+            color: #2b1b17;
+            max-width: 750px;
+            width: 100%;
+            padding: 45px 35px;
+            border-radius: 16px;
+            border: 12px double #d4af37;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .cert-header {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            color: #800f2f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .cert-name {
+            font-family: var(--font-script);
+            font-size: 3.4rem;
+            color: #c1121f;
+            margin: 15px 0;
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+            padding: 0 25px;
+        }
+
+        /* Personalizer Drawer */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(10px);
+            z-index: 2500;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .drawer-card {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--bg-dark);
+            border-left: 1px solid var(--border-glass);
+            padding: 35px 25px;
+            z-index: 2600;
+            transition: var(--transition-smooth);
+            overflow-y: auto;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.6);
+        }
+
+        .drawer-overlay.active .drawer-card {
+            right: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .timer-card { grid-template-columns: repeat(2, 1fr); }
+            .hero-title { font-size: 2.5rem; }
+            .proposal-actions { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Canvas Background for Hearts & Sparkles -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Top Sticky Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <i class="fa-solid fa-heart"></i>
+            <span id="navGirlName">Nishita Sharma</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#letter"><i class="fa-solid fa-envelope-open-text"></i> Letter</a></li>
+            <li><a href="#gallery"><i class="fa-solid fa-images"></i> Memories</a></li>
+            <li><a href="#reasons"><i class="fa-solid fa-bolt"></i> Nishita Special</a></li>
+            <li><a href="#coupons"><i class="fa-solid fa-ticket"></i> Bestie Vouchers</a></li>
+            <li><a href="#lovemeter"><i class="fa-solid fa-gauge-high"></i> Vibe-o-Meter</a></li>
+            <li><a href="#proposal"><i class="fa-solid fa-handshake"></i> Besties Forever?</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="icon-btn" id="musicToggleBtn" title="Play Ambient Music">
+                <i class="fa-solid fa-music"></i>
+            </button>
+            <button class="icon-btn" id="openDrawerBtn" title="Customize Details">
+                <i class="fa-solid fa-sliders"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MAIN SPA CONTENT -->
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                
+                <!-- UNCROPPED HERO AVATAR -->
+                <div class="hero-avatar-wrapper">
+                    <i class="fa-solid fa-crown hero-avatar-crown"></i>
+                    <div class="hero-avatar-card">
+                        <!-- UNCROPPED IMAGE DISPLAY -->
+                        <img src="images/WhatsApp Image 2026-09-04 at 11.33.13 AM (1).jpeg" alt="Nishita Sharma" id="heroImage">
+                    </div>
+                </div>
+
+                <div>
+                    <span class="badge-pill">
+                        <i class="fa-solid fa-sparkles"></i> Bestie Edition • Exclusively For You
+                    </span>
+                </div>
+
+                <h1 class="hero-title">
+                    To My Amazing New Bestie, <br>
+                    <span class="name" id="displayGirlName">Nishita Sharma 💖✨</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    We only met <b>2 days ago</b>, but it feels like we've been best friends for a lifetime! From your badass <b>Taekwondo kicks</b> 🥋 to building your startup <b>Fit Foundation</b> 🏋️‍♀️💼 and your passion for <b>Traveling & Exploring</b> ✈️🌄 — you are 100% one of a kind!
+                </p>
+
+                <!-- Nishita Identity Tags -->
+                <div class="identity-tags">
+                    <span class="id-tag"><i class="fa-solid fa-user-ninja"></i> Ex-Taekwondo Fighter 🥋</span>
+                    <span class="id-tag"><i class="fa-solid fa-briefcase"></i> Founder @ Fit Foundation 🏋️‍♀️</span>
+                    <span class="id-tag"><i class="fa-solid fa-plane"></i> Wanderlust Traveler ✈️</span>
+                    <span class="id-tag"><i class="fa-solid fa-clock"></i> Besties Since 2 Days Ago ⏳</span>
+                </div>
+
+                <!-- Meeting Timer (2 Days & Counting) -->
+                <div class="timer-card glass-card">
+                    <div class="timer-unit">
+                        <div class="timer-num" id="countDays">02</div>
+                        <div class="timer-label">Days Known</div>
+                    </div>
+                    <div class="timer-unit">
+                        <div class="timer-num" id="countHours">00</div>
+                        <div class="timer-label">Hours</div>
+                    </div>
+                    <div class="timer-unit">
+                        <div class="timer-num" id="countMins">00</div>
+                        <div class="timer-label">Minutes</div>
+                    </div>
+                    <div class="timer-unit">
+                        <div class="timer-num" id="countSecs">00</div>
+                        <div class="timer-label">Seconds</div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#letter" class="btn btn-primary">
+                        <i class="fa-solid fa-envelope"></i> Read Bestie Note 💌
+                    </a>
+                    <a href="#proposal" class="btn btn-secondary">
+                        <i class="fa-solid fa-star"></i> Besties Forever? 👯‍♀️
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 2. WAX-SEALED BESTIE LETTER -->
+        <section id="letter">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-pill"><i class="fa-solid fa-envelope"></i> Special Note</span>
+                    <h2 class="section-title">A Message For You, Nishita</h2>
+                    <p class="section-subtitle">Click the red seal below to open your personal appreciation letter 💌</p>
+                </div>
+
+                <div class="envelope-wrapper">
+                    <div class="envelope-card">
+                        <div class="wax-seal" id="waxSeal" title="Click to break seal!">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 style="font-family: var(--font-title); font-size: 1.4rem; color: var(--secondary);">
+                            Sealed With Infinite Bestie Appreciation ✨
+                        </h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">Tap seal to open</p>
+
+                        <!-- Letter Content -->
+                        <div class="letter-content" id="letterBody">
+                            <div class="letter-salutation">Hey Nishita! 👋✨</div>
+                            <div class="letter-body">
+                                <p>Honestly, it's wild to think we only met <b>2 days ago</b>. Some people take months to build a vibe, but with you, the instant connection was so effortless that it feels like I've known you for years!</p>
+                                <p>You are an absolute inspiration! A fierce <b>Taekwondo martial artist 🥋</b> who takes on any challenge, an ambitious startup founder building <b>Fit Foundation 🏋️‍♀️💼</b>, and a fun-loving traveler who is always ready for the next adventure ✈️🌄.</p>
+                                <p>I am super glad our paths crossed. Here’s to endless travel road trips, scaling Fit Foundation to the moon, and being absolute besties for life!</p>
+                            </div>
+                            <div class="letter-ps">
+                                <b>P.S.</b> Reading this letter automatically entitles you to 1 free travel itinerary, post-workout protein treat, and lifetime hype support! 🚀🔥
+                            </div>
+                            <div class="letter-sign">
+                                Your Newest Bestie,<br>
+                                <span id="displaySenderName">Your Friend ❤️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. UNCROPPED POLAROID MEMORY GALLERY -->
+        <section id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-pill"><i class="fa-solid fa-camera"></i> Full View Photos</span>
+                    <h2 class="section-title">Nishita's Snapshot Gallery</h2>
+                    <p class="section-subtitle">Every photo presented in full uncropped glory! 📸✨ (Click any photo to zoom in)</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Polaroid 1 -->
+                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.13 AM.jpeg', 'Nishita in her full shining element! ✨', 'Wanderlust Explorer ✈️')">
+                        <div class="polaroid-tape"></div>
+                        <div class="polaroid-img-wrapper">
+                            <!-- UNCROPPED IMAGE -->
+                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.13 AM.jpeg" alt="Nishita Snapshot 1" class="polaroid-img">
+                        </div>
+                        <div class="polaroid-caption">Pure Magic ✨</div>
+                        <center><span class="polaroid-tag">Wanderlust Explorer ✈️</span></center>
+                    </div>
+
+                    <!-- Polaroid 2 -->
+                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.13 AM (1).jpeg', 'Founder Energy @ Fit Foundation! 🏋️‍♀️💼', 'Startup Boss 🚀')">
+                        <div class="polaroid-tape"></div>
+                        <div class="polaroid-img-wrapper">
+                            <!-- UNCROPPED IMAGE -->
+                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.13 AM (1).jpeg" alt="Nishita Snapshot 2" class="polaroid-img">
+                        </div>
+                        <div class="polaroid-caption">Boss Energy 💼</div>
+                        <center><span class="polaroid-tag">Founder @ Fit Foundation 🏋️‍♀️</span></center>
+                    </div>
+
+                    <!-- Polaroid 3 -->
+                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.14 AM.jpeg', 'Don\'t mess with a Taekwondo champion! 🥋💥', 'Black Belt Vibes 🥋')">
+                        <div class="polaroid-tape"></div>
+                        <div class="polaroid-img-wrapper">
+                            <!-- UNCROPPED IMAGE -->
+                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.14 AM.jpeg" alt="Nishita Snapshot 3" class="polaroid-img">
+                        </div>
+                        <div class="polaroid-caption">Fierce Fighter 🥋</div>
+                        <center><span class="polaroid-tag">Taekwondo Champion 🔥</span></center>
+                    </div>
+
+                    <!-- Polaroid 4 -->
+                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.14 AM (1).jpeg', 'Always ready for spontaneous road trips & travel! 🚗💨', 'Adventure Buddy 🌄')">
+                        <div class="polaroid-tape"></div>
+                        <div class="polaroid-img-wrapper">
+                            <!-- UNCROPPED IMAGE -->
+                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.14 AM (1).jpeg" alt="Nishita Snapshot 4" class="polaroid-img">
+                        </div>
+                        <div class="polaroid-caption">Adventure Time 🌄</div>
+                        <center><span class="polaroid-tag">Travel Nomad ✈️</span></center>
+                    </div>
+
+                    <!-- Polaroid 5 -->
+                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.14 AM (2).jpeg', 'Met 2 days ago, besties for life! 👯‍♀️💖', 'Instant Connection ⚡')">
+                        <div class="polaroid-tape"></div>
+                        <div class="polaroid-img-wrapper">
+                            <!-- UNCROPPED IMAGE -->
+                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.14 AM (2).jpeg" alt="Nishita Snapshot 5" class="polaroid-img">
+                        </div>
+                        <div class="polaroid-caption">Bestie Bond 👯‍♀️</div>
+                        <center><span class="polaroid-tag">Bestie For Life 💖</span></center>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. "THE NISHITA SPECIAL" FLIP CARDS -->
+        <section id="reasons">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-pill"><i class="fa-solid fa-crown"></i> Identity Spotlight</span>
+                    <h2 class="section-title">What Makes Nishita Iconic? ⚡</h2>
+                    <p class="section-subtitle">Tap any card to reveal her superhuman bestie traits! 🥋🔥</p>
+                </div>
+
+                <div class="reasons-grid">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <i class="fa-solid fa-user-ninja"></i>
+                                <h3>The Taekwondo Martial Artist 🥋</h3>
+                            </div>
+                            <div class="flip-back">
+                                <p>"Warning: Nishita can high-kick you into next week! Powerful, disciplined, and fearless athlete energy!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <i class="fa-solid fa-building-user"></i>
+                                <h3>Founder @ Fit Foundation 🏋️‍♀️</h3>
+                            </div>
+                            <div class="flip-back">
+                                <p>"Running her startup Fit Foundation like a total boss! Transforming lives, fitness, and leading with passion!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <i class="fa-solid fa-route"></i>
+                                <h3>Wanderlust Traveler ✈️</h3>
+                            </div>
+                            <div class="flip-back">
+                                <p>"Ghumna is life! Show her a mountain or a beach, and her bags are packed in 5 minutes flat!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <i class="fa-solid fa-bolt"></i>
+                                <h3>The '2-Day' Connection ⚡</h3>
+                            </div>
+                            <div class="flip-back">
+                                <p>"Met just 2 days ago, but the vibe check passed so fast it feels like we've been besties since childhood!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <i class="fa-solid fa-face-laugh-beam"></i>
+                                <h3>Chief Hype Person 🚀</h3>
+                            </div>
+                            <div class="flip-back">
+                                <p>"Brings 100% positive energy, high-octane laughter, and zero drama wherever she goes!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-front">
+                                <i class="fa-solid fa-gem"></i>
+                                <h3>One In A Million 💎</h3>
+                            </div>
+                            <div class="flip-back">
+                                <p>"Smart, strong, athletic, ambitious, and super fun — truly the ultimate bestie combination!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. BESTIE VIBE-O-METER 3000 -->
+        <section id="lovemeter">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-pill"><i class="fa-solid fa-gauge-high"></i> Friendship Synergy</span>
+                    <h2 class="section-title">The Bestie Vibe-o-Meter ⚡</h2>
+                    <p class="section-subtitle">Press the button to calculate Nishita & My friendship frequency!</p>
+                </div>
+
+                <div class="love-meter-box glass-card">
+                    <div class="meter-dial-container">
+                        <div class="meter-circle"></div>
+                        <div class="meter-display">
+                            <span id="meterPercent">0%</span>
+                            <span class="meter-sub">Synergy</span>
+                        </div>
+                    </div>
+
+                    <div class="meter-status-text" id="meterStatus">Ready to scan friendship frequency...</div>
+
+                    <button class="btn btn-primary" id="startMeterBtn">
+                        <i class="fa-solid fa-bolt"></i> Calculate Bestie Synergy ⚡
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. REDEEMABLE BESTIE VOUCHERS -->
+        <section id="coupons">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-pill"><i class="fa-solid fa-ticket"></i> Non-Transferable</span>
+                    <h2 class="section-title">Nishita's Bestie Vouchers 🎟️</h2>
+                    <p class="section-subtitle">Click to redeem anytime! Guaranteed 100% fulfillment 🫡</p>
+                </div>
+
+                <div class="coupons-grid">
+                    <!-- Coupon 1 -->
+                    <div class="coupon-card" id="coupon1">
+                        <div class="coupon-stamp">REDEEMED</div>
+                        <div>
+                            <div class="coupon-header">
+                                <span class="coupon-badge">Travel</span>
+                                <i class="fa-solid fa-plane" style="color: var(--secondary);"></i>
+                            </div>
+                            <h3 class="coupon-title">Free Travel Buddy Pass ✈️</h3>
+                            <p class="coupon-desc">You pick the destination, and I'll handle the itinerary, snacks, and playlist!</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon1', 'Travel Buddy Pass')">Redeem Voucher 🎟️</button>
+                    </div>
+
+                    <!-- Coupon 2 -->
+                    <div class="coupon-card" id="coupon2">
+                        <div class="coupon-stamp">REDEEMED</div>
+                        <div>
+                            <div class="coupon-header">
+                                <span class="coupon-badge">Startup</span>
+                                <i class="fa-solid fa-dumbbell" style="color: var(--accent-gold);"></i>
+                            </div>
+                            <h3 class="coupon-title">Fit Foundation Post-Workout Treat 🏋️‍♀️</h3>
+                            <p class="coupon-desc">Entitles you to a delicious smoothie or coffee treat after a hard workout day!</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon2', 'Fit Foundation Treat')">Redeem Voucher 🎟️</button>
+                    </div>
+
+                    <!-- Coupon 3 -->
+                    <div class="coupon-card" id="coupon3">
+                        <div class="coupon-stamp">REDEEMED</div>
+                        <div>
+                            <div class="coupon-header">
+                                <span class="coupon-badge">Taekwondo</span>
+                                <i class="fa-solid fa-user-ninja" style="color: var(--primary);"></i>
+                            </div>
+                            <h3 class="coupon-title">Punching Bag Duty 🥋</h3>
+                            <p class="coupon-desc">I will hold the sparring pads for your Taekwondo kicks (and promise not to cry!).</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon3', 'Punching Bag Duty')">Redeem Voucher 🎟️</button>
+                    </div>
+
+                    <!-- Coupon 4 -->
+                    <div class="coupon-card" id="coupon4">
+                        <div class="coupon-stamp">REDEEMED</div>
+                        <div>
+                            <div class="coupon-header">
+                                <span class="coupon-badge">Hype</span>
+                                <i class="fa-solid fa-lightbulb" style="color: #4cc9f0;"></i>
+                            </div>
+                            <h3 class="coupon-title">2 AM Startup Brainstorming 💡</h3>
+                            <p class="coupon-desc">Got a wild idea for Fit Foundation at 2 AM? Call me and we will build the plan!</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon4', '2 AM Brainstorming')">Redeem Voucher 🎟️</button>
+                    </div>
+
+                    <!-- Coupon 5 -->
+                    <div class="coupon-card" id="coupon5">
+                        <div class="coupon-stamp">REDEEMED</div>
+                        <div>
+                            <div class="coupon-header">
+                                <span class="coupon-badge">Support</span>
+                                <i class="fa-solid fa-bullhorn" style="color: #7209b7;"></i>
+                            </div>
+                            <h3 class="coupon-title">Unlimited Hype Person 📣</h3>
+                            <p class="coupon-desc">Whenever you launch a project or beat a goal, I will celebrate & cheer loudest!</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon5', 'Unlimited Hype Person')">Redeem Voucher 🎟️</button>
+                    </div>
+
+                    <!-- Coupon 6 -->
+                    <div class="coupon-card" id="coupon6">
+                        <div class="coupon-stamp">REDEEMED</div>
+                        <div>
+                            <div class="coupon-header">
+                                <span class="coupon-badge">Fun</span>
+                                <i class="fa-solid fa-utensils" style="color: var(--accent-gold);"></i>
+                            </div>
+                            <h3 class="coupon-title">Food & Coffee Treat Pass ☕</h3>
+                            <p class="coupon-desc">Claim 1 free coffee or meal on me anytime you're working hard!</p>
+                        </div>
+                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon6', 'Food & Coffee Treat')">Redeem Voucher 🎟️</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. THE BESTIE PROPOSAL ("BESTIES FOR LIFE?") -->
+        <section class="proposal-section" id="proposal">
+            <div class="container">
+                <div class="proposal-box glass-card">
+                    <h2 class="proposal-title">Besties For Life, Nishita? 👯‍♀️✨</h2>
+                    <p class="proposal-text">
+                        We met 2 days ago, but the vibe is 100% matched! Are we locked in as official lifelong best friends?
+                    </p>
+
+                    <div class="proposal-actions">
+                        <button class="btn btn-primary btn-yes" id="proposalYesBtn">
+                            <i class="fa-solid fa-thumbs-up"></i> YES, BESTIES FOR LIFE! 👯‍♀️
+                        </button>
+                        
+                        <!-- Evasive running No button -->
+                        <button class="btn btn-no" id="proposalNoBtn">
+                            No 😜
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 0.95rem;">
+        <p>Crafted with high energy & bestie love for <span id="footerGirl">Nishita Sharma</span> • Founder @ Fit Foundation 🏋️‍♀️✨</p>
+        <p style="font-size: 0.8rem; margin-top: 8px; opacity: 0.7;">Besties Since Day 1 • 2026</p>
+    </footer>
+
+
+    <!-- MODALS & DRAWERS -->
+
+    <!-- Lightbox Photo Modal (FULL UNCROPPED VIEW) -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-content">
+            <div class="lightbox-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></div>
+            <!-- Full Image -->
+            <img src="" alt="Nishita Photo Lightbox" class="lightbox-img" id="lightboxImg">
+            <h3 style="font-family: var(--font-title); font-size: 1.5rem; margin-top: 18px; color: var(--secondary);" id="lightboxCaption">Caption</h3>
+            <p style="color: #666; font-size: 0.95rem; margin-top: 6px;" id="lightboxTag">Tag</p>
+        </div>
+    </div>
+
+    <!-- Official Bestie Certificate Modal -->
+    <div class="certificate-modal" id="certModal">
+        <div class="certificate-card">
+            <div class="cert-header">🏆 Official Certificate of Ultimate Besties 🏆</div>
+            <p style="font-size: 1.1rem; color: #555; margin-top: 10px;">This certifies that</p>
+            <div class="cert-name" id="certGirlName">Nishita Sharma</div>
+            <p style="font-size: 1.2rem; color: #2b1b17; margin: 15px 0;">
+                (Taekwondo Fighter 🥋 • Founder of Fit Foundation 🏋️‍♀️ • Wanderlust Explorer ✈️)<br>
+                is officially declared as the coolest, most badass lifelong best friend!
+            </p>
+            <div style="margin-top: 25px; display: flex; justify-content: space-around; font-family: var(--font-script); font-size: 1.8rem; color: #800f2f;">
+                <div>Signed: <span id="certSenderName">Your Bestie</span></div>
+                <div>Status: Vibe Locked 🔒✨</div>
+            </div>
+            <button class="btn btn-primary" style="margin-top: 30px;" onclick="closeCertModal()">
+                Celebrate Friendship 🎉✨
+            </button>
+        </div>
+    </div>
+
+    <!-- Personalizer Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay">
+        <div class="drawer-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                <h3 style="font-family: var(--font-title); font-size: 1.4rem; color: var(--secondary);">
+                    <i class="fa-solid fa-sliders"></i> Personalize SPA
+                </h3>
+                <button class="icon-btn" id="closeDrawerBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <form id="settingsForm">
+                <div class="form-group">
+                    <label>Her Name:</label>
+                    <input type="text" class="form-input" id="inputGirlName" value="Nishita Sharma">
+                </div>
+
+                <div class="form-group">
+                    <label>Your Name:</label>
+                    <input type="text" class="form-input" id="inputSenderName" value="Your Bestie">
+                </div>
+
+                <div class="form-group">
+                    <label>Met Date:</label>
+                    <input type="date" class="form-input" id="inputStartDate" value="2026-09-02">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    <i class="fa-solid fa-floppy-disk"></i> Save & Update ✨
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ==========================================================================
+       JAVASCRIPT LOGIC
+       ========================================================================== -->
+    <script>
+        const defaultState = {
+            girlName: "Nishita Sharma 💖✨",
+            senderName: "Your Bestie ❤️",
+            startDate: "2026-09-02T00:00:00"
+        };
+
+        let state = { ...defaultState };
+
+        function loadState() {
+            const saved = localStorage.getItem('nishita_spa_state');
+            if (saved) {
+                try { state = { ...defaultState, ...JSON.parse(saved) }; } catch(e) {}
+            }
+            updateDOMWithState();
+        }
+
+        function saveState() {
+            localStorage.setItem('nishita_spa_state', JSON.stringify(state));
+            updateDOMWithState();
+        }
+
+        function updateDOMWithState() {
+            document.getElementById('navGirlName').textContent = state.girlName.replace(/[^a-zA-Z\s]/g, '').trim() || "Nishita Sharma";
+            document.getElementById('displayGirlName').textContent = state.girlName;
+            document.getElementById('displaySenderName').textContent = state.senderName;
+            document.getElementById('footerGirl').textContent = state.girlName;
+            document.getElementById('certGirlName').textContent = state.girlName;
+            document.getElementById('certSenderName').textContent = state.senderName;
+            
+            document.getElementById('inputGirlName').value = state.girlName;
+            document.getElementById('inputSenderName').value = state.senderName;
+            if(state.startDate) {
+                document.getElementById('inputStartDate').value = state.startDate.split('T')[0];
+            }
+        }
+
+        /* Canvas Floating Particles */
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        class StarParticle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 80;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * 1.5 + 0.6;
+                this.opacity = Math.random() * 0.7 + 0.3;
+                this.color = Math.random() > 0.5 ? '#05d9e8' : '#ff2a6d';
+            }
+            update() {
+                this.y -= this.speedY;
+                this.x += Math.sin(this.y * 0.01) * 0.6;
+                if (this.y < -20) this.reset();
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        const particles = Array.from({ length: 40 }, () => new StarParticle());
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        /* Meeting Timer (2 Days) */
+        function updateMeetingTimer() {
+            const start = new Date(state.startDate || "2026-09-02").getTime();
+            const now = new Date().getTime();
+            const diff = Math.max(0, now - start);
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countDays').textContent = String(days).padStart(2, '0');
+            document.getElementById('countHours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('countMins').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('countSecs').textContent = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateMeetingTimer, 1000);
+        updateMeetingTimer();
+
+        /* Wax Seal Letter Toggle */
+        const waxSeal = document.getElementById('waxSeal');
+        const letterBody = document.getElementById('letterBody');
+
+        waxSeal.addEventListener('click', () => {
+            playAudioChime();
+            waxSeal.style.transform = 'scale(0.8) rotate(-20deg)';
+            waxSeal.style.opacity = '0';
+            setTimeout(() => {
+                waxSeal.style.display = 'none';
+                letterBody.style.display = 'block';
+                confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
+            }, 300);
+        });
+
+        /* Lightbox for Gallery */
+        function openLightbox(imgSrc, caption, tag) {
+            playAudioPop();
+            document.getElementById('lightboxImg').src = imgSrc;
+            document.getElementById('lightboxCaption').textContent = caption;
+            document.getElementById('lightboxTag').textContent = tag;
+            document.getElementById('lightboxModal').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.remove('active');
+        }
+
+        /* Vibe-o-Meter Logic */
+        const startMeterBtn = document.getElementById('startMeterBtn');
+        const meterPercent = document.getElementById('meterPercent');
+        const meterStatus = document.getElementById('meterStatus');
+
+        startMeterBtn.addEventListener('click', () => {
+            startMeterBtn.disabled = true;
+            meterStatus.textContent = "Scanning friendship frequency...";
+            let current = 0;
+
+            const interval = setInterval(() => {
+                current += Math.floor(Math.random() * 20) + 5;
+                playAudioBeep(current);
+
+                if (current < 100) {
+                    meterPercent.textContent = current + '%';
+                } else if (current >= 100 && current < 9999) {
+                    meterStatus.textContent = "⚡ Friendship synergy breaking the scale!";
+                    meterPercent.textContent = current + '%';
+                } else {
+                    clearInterval(interval);
+                    meterPercent.textContent = "1,000,000%";
+                    meterStatus.textContent = "🚀 MAXIMUM SYNERGY ACHIEVED! Besties For Life!";
+                    startMeterBtn.disabled = false;
+                    confetti({ particleCount: 120, spread: 100, origin: { y: 0.6 } });
+                }
+            }, 60);
+        });
+
+        /* Coupons Logic */
+        function redeemCoupon(couponId, title) {
+            const card = document.getElementById(couponId);
+            if(card.classList.contains('redeemed')) return;
+
+            card.classList.add('redeemed');
+            playAudioChime();
+            confetti({ particleCount: 70, spread: 70, origin: { y: 0.7 } });
+            alert(`🎟️ Voucher Redeemed!\n\nYou claimed: "${title}".\nScreenshot this pass to claim your reward anytime! 🚀✨`);
+        }
+
+        /* Runaway No Button & Proposal YES */
+        const noBtn = document.getElementById('proposalNoBtn');
+        const yesBtn = document.getElementById('proposalYesBtn');
+        const certModal = document.getElementById('certModal');
+
+        const funnyTaunts = [
+            "Are you sure? 🥺",
+            "Wrong button Nishita! 😜",
+            "Nope! Try again!",
+            "Besties forever, no escape!",
+            "Nice try! Taekwondo speed! 🥋",
+            "Press YES already! 🎉",
+            "Error 404: No option unavailable!"
+        ];
+        let tauntIndex = 0;
+
+        function dodgeNoButton() {
+            playAudioPop();
+            const x = Math.random() * (window.innerWidth - 160) - (window.innerWidth / 2 - 80);
+            const y = Math.random() * 300 - 150;
+            noBtn.style.position = 'relative';
+            noBtn.style.transform = `translate(${x}px, ${y}px) scale(0.9)`;
+            noBtn.textContent = funnyTaunts[tauntIndex];
+            tauntIndex = (tauntIndex + 1) % funnyTaunts.length;
+        }
+
+        noBtn.addEventListener('mouseenter', dodgeNoButton);
+        noBtn.addEventListener('touchstart', (e) => { e.preventDefault(); dodgeNoButton(); });
+
+        yesBtn.addEventListener('click', () => {
+            playVictoryFanfare();
+            certModal.classList.add('active');
+            const end = Date.now() + (3 * 1000);
+            (function frame() {
+                confetti({ particleCount: 6, angle: 60, spread: 55, origin: { x: 0 } });
+                confetti({ particleCount: 6, angle: 120, spread: 55, origin: { x: 1 } });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            })();
+        });
+
+        function closeCertModal() { certModal.classList.remove('active'); }
+
+        /* Personalizer Drawer */
+        const openDrawerBtn = document.getElementById('openDrawerBtn');
+        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const settingsForm = document.getElementById('settingsForm');
+
+        openDrawerBtn.addEventListener('click', () => drawerOverlay.classList.add('active'));
+        closeDrawerBtn.addEventListener('click', () => drawerOverlay.classList.remove('active'));
+        drawerOverlay.addEventListener('click', (e) => {
+            if(e.target === drawerOverlay) drawerOverlay.classList.remove('active');
+        });
+
+        settingsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            state.girlName = document.getElementById('inputGirlName').value || defaultState.girlName;
+            state.senderName = document.getElementById('inputSenderName').value || defaultState.senderName;
+            const dateVal = document.getElementById('inputStartDate').value;
+            if(dateVal) state.startDate = dateVal + 'T00:00:00';
+            saveState();
+            drawerOverlay.classList.remove('active');
+            playAudioChime();
+        });
+
+        /* Web Audio API Sound Effects */
+        let audioCtx = null;
+        function getAudioContext() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            return audioCtx;
+        }
+
+        function playAudioPop() {
+            try {
+                const ctx = getAudioContext();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.frequency.setValueAtTime(400, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.08);
+                gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.08);
+                osc.connect(gain); gain.connect(ctx.destination);
+                osc.start(); osc.stop(ctx.currentTime + 0.08);
+            } catch(e) {}
+        }
+
+        function playAudioChime() {
+            try {
+                const ctx = getAudioContext();
+                [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'triangle';
+                    osc.frequency.value = freq;
+                    gain.gain.setValueAtTime(0.15, ctx.currentTime + i * 0.08);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.08 + 0.4);
+                    osc.connect(gain); gain.connect(ctx.destination);
+                    osc.start(ctx.currentTime + i * 0.08);
+                    osc.stop(ctx.currentTime + i * 0.08 + 0.4);
+                });
+            } catch(e) {}
+        }
+
+        function playAudioBeep(val) {
+            try {
+                const ctx = getAudioContext();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.frequency.value = 300 + (val * 2);
+                gain.gain.setValueAtTime(0.05, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+                osc.connect(gain); gain.connect(ctx.destination);
+                osc.start(); osc.stop(ctx.currentTime + 0.05);
+            } catch(e) {}
+        }
+
+        function playVictoryFanfare() {
+            try {
+                const ctx = getAudioContext();
+                [523.25, 659.25, 783.99, 1046.50, 1318.51].forEach((freq, i) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.frequency.value = freq;
+                    gain.gain.setValueAtTime(0.2, ctx.currentTime + i * 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.1 + 0.5);
+                    osc.connect(gain); gain.connect(ctx.destination);
+                    osc.start(ctx.currentTime + i * 0.1);
+                    osc.stop(ctx.currentTime + i * 0.1 + 0.5);
+                });
+            } catch(e) {}
+        }
+
+        let isMusicPlaying = false;
+        const musicToggleBtn = document.getElementById('musicToggleBtn');
+        musicToggleBtn.addEventListener('click', () => {
+            if (!isMusicPlaying) {
+                isMusicPlaying = true;
+                musicToggleBtn.style.background = 'var(--primary)';
+                musicToggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+                playAudioChime();
+            } else {
+                isMusicPlaying = false;
+                musicToggleBtn.style.background = 'var(--bg-glass)';
+                musicToggleBtn.innerHTML = '<i class="fa-solid fa-music"></i>';
+            }
+        });
+
+        loadState();
+    </script>
+</body>
+</html>
