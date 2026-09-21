@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishita Sharma 👑 | To My Favorite Bestie in the Universe ✨</title>
-    <meta name="description" content="A special appreciation SPA page for Nishita Sharma — Founder of Fit Foundation, Taekwondo fighter, traveler, and bestie!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Anshika Khandelwal 🌸✨ | Hamesha Mast & Khilkhilati Raho!</title>
+    <meta name="description" content="A special, heartwarming single-page celebration crafted with love for Anshika Khandelwal — full of heartfelt messages, soulful shayaris, laughter, and lifelong friendship.">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts (English + Hindi Typography) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Canvas Confetti Library -->
@@ -19,48 +19,64 @@
 
     <style>
         /* ==========================================================================
-           1. DESIGN SYSTEM & CSS VARIABLES
+           1. MODERN LUXURY DESIGN SYSTEM & FLUID TOKENS
            ========================================================================== */
         :root {
-            --primary: #ff2a6d;
-            --primary-hover: #ff0055;
-            --primary-glow: rgba(255, 42, 109, 0.4);
-            --secondary: #05d9e8;
-            --accent-gold: #ffb703;
-            --accent-purple: #d800bb;
-            --bg-dark: #0b0719;
-            --bg-card: rgba(25, 16, 45, 0.7);
+            --primary: #ff2d75;
+            --primary-glow: rgba(255, 45, 117, 0.45);
+            --primary-dark: #cc1155;
+            --secondary: #ff9a3c;
+            --accent-gold: #ffbe0b;
+            --accent-cyan: #00f0ff;
+            --accent-violet: #a855f7;
+            --bg-dark: #0a0414;
+            --bg-card: rgba(24, 12, 38, 0.75);
+            --bg-card-hover: rgba(38, 20, 60, 0.9);
             --bg-glass: rgba(255, 255, 255, 0.08);
-            --border-glass: rgba(5, 217, 232, 0.25);
-            --text-main: #f8f9fa;
-            --text-muted: #c3b7db;
+            --border-glass: rgba(255, 154, 60, 0.22);
+            --border-glow: rgba(255, 45, 117, 0.38);
+            --text-main: #fbfbfe;
+            --text-muted: #d5c8e8;
             --font-title: 'Playfair Display', Georgia, serif;
-            --font-script: 'Dancing Script', 'Sacramento', cursive;
-            --font-body: 'Outfit', -apple-system, sans-serif;
-            --radius-lg: 24px;
-            --radius-md: 16px;
-            --radius-sm: 10px;
-            --shadow-glow: 0 10px 30px rgba(255, 42, 109, 0.35);
-            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-            --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-script: 'Dancing Script', cursive;
+            --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-hindi: 'Rozha One', 'Yatra One', Georgia, serif;
+            --radius-xl: 24px;
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-glow: 0 10px 30px rgba(255, 45, 117, 0.35);
+            --shadow-glass: 0 10px 35px 0 rgba(0, 0, 0, 0.55);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Base Reset */
-        * {
+        /* Reset & Base - Strictly Zero Horizontal Overflow */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         body {
             background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(255, 45, 117, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 90% 30%, rgba(168, 85, 247, 0.13) 0%, transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(255, 154, 60, 0.1) 0%, transparent 50%);
+            background-attachment: fixed;
             color: var(--text-main);
             font-family: var(--font-body);
             overflow-x: hidden;
-            line-height: 1.65;
-            min-height: 100vh;
+            width: 100%;
             position: relative;
+            line-height: 1.6;
         }
 
         /* Canvas Particle Background */
@@ -70,97 +86,93 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 0;
             pointer-events: none;
+            z-index: 0;
         }
 
-        /* Selection styling */
-        ::selection {
-            background: var(--primary);
-            color: #ffffff;
-        }
-
-        /* Custom Scrollbar */
+        /* Scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
+            background: #090310;
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--secondary);
-            border-radius: 5px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 4px;
         }
 
-        /* Utility Layouts */
+        /* Fluid Container */
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 clamp(16px, 4vw, 28px);
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        section {
-            padding: 95px 0;
-            position: relative;
+        /* Glass Card Utility */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-glass);
+            transition: var(--transition);
+        }
+        .glass-card:hover {
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-glow);
         }
 
+        /* Section Headers */
         .section-header {
             text-align: center;
-            margin-bottom: 55px;
+            margin-bottom: clamp(35px, 6vw, 55px);
         }
-
         .badge-pill {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 20px;
-            background: rgba(5, 217, 232, 0.12);
-            border: 1px solid var(--border-glass);
+            padding: 7px 18px;
+            background: rgba(255, 45, 117, 0.16);
+            border: 1px solid rgba(255, 45, 117, 0.4);
             border-radius: 50px;
-            color: var(--secondary);
-            font-size: 0.88rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: clamp(0.75rem, 2.2vw, 0.88rem);
+            font-weight: 600;
+            color: #ffaac4;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-            margin-bottom: 16px;
-            backdrop-filter: blur(10px);
-            animation: pulse-glow 2.5s infinite alternate;
+            margin-bottom: 14px;
+            box-shadow: 0 0 18px rgba(255, 45, 117, 0.25);
+            animation: pulseBadge 3s infinite alternate;
+            max-width: 100%;
+            text-align: center;
         }
-
+        @keyframes pulseBadge {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 45, 117, 0.2); }
+            100% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255, 45, 117, 0.45); }
+        }
         .section-title {
             font-family: var(--font-title);
-            font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
             font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, var(--secondary) 50%, var(--primary) 100%);
+            background: linear-gradient(135deg, #ffffff 15%, #ffd4e0 55%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            word-break: break-word;
         }
-
         .section-subtitle {
-            font-size: 1.15rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.12rem);
             color: var(--text-muted);
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto;
-        }
-
-        /* Glassmorphism Card Base */
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-glass);
-            transition: var(--transition-smooth);
-        }
-
-        .glass-card:hover {
-            border-color: rgba(5, 217, 232, 0.45);
-            box-shadow: 0 12px 40px rgba(5, 217, 232, 0.2);
+            line-height: 1.6;
         }
 
         /* Buttons */
@@ -169,1081 +181,1695 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 14px 32px;
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 1.05rem;
+            padding: clamp(12px, 3vw, 15px) clamp(20px, 4vw, 28px);
             border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
+            font-size: clamp(0.9rem, 2.5vw, 1.02rem);
+            font-weight: 600;
             text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
             position: relative;
-            overflow: hidden;
-            z-index: 1;
+            user-select: none;
+            text-align: center;
         }
-
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
-            color: #ffffff;
-            box-shadow: var(--shadow-glow);
+            background: linear-gradient(135deg, var(--primary) 0%, #ff6b3d 100%);
+            color: white;
+            box-shadow: 0 8px 24px var(--primary-glow);
         }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 15px 35px rgba(255, 42, 109, 0.5);
+        .btn-primary:hover, .btn-primary:active {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(255, 45, 117, 0.6);
         }
-
         .btn-secondary {
-            background: var(--bg-glass);
-            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
             border: 1px solid var(--border-glass);
             backdrop-filter: blur(8px);
         }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
+        .btn-secondary:hover, .btn-secondary:active {
+            background: rgba(255, 255, 255, 0.16);
             border-color: var(--secondary);
+            color: var(--secondary);
             transform: translateY(-2px);
         }
 
-        /* Keyframes */
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 10px rgba(5, 217, 232, 0.2); }
-            100% { box-shadow: 0 0 25px rgba(255, 42, 109, 0.5); }
-        }
-
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(2deg); }
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.15); }
-            40% { transform: scale(1); }
-            60% { transform: scale(1.12); }
-        }
-
         /* ==========================================================================
-           2. NAVBAR
+           2. NAVIGATION BAR & MOBILE MENU
            ========================================================================== */
         .navbar {
             position: fixed;
-            top: 20px;
+            top: 14px;
             left: 50%;
             transform: translateX(-50%);
-            width: calc(100% - 48px);
-            max-width: 1150px;
-            padding: 12px 28px;
-            background: rgba(11, 7, 25, 0.85);
+            width: calc(100% - 28px);
+            max-width: 1160px;
+            background: rgba(18, 8, 28, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-glass);
             border-radius: 50px;
-            z-index: 1000;
+            padding: 10px clamp(16px, 3vw, 26px);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
         }
-
-        .nav-logo {
-            font-family: var(--font-script);
-            font-size: 1.8rem;
+        .nav-brand {
+            font-family: var(--font-title);
+            font-size: clamp(1.1rem, 3.5vw, 1.35rem);
             font-weight: 700;
-            color: #ffffff;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             text-decoration: none;
+            white-space: nowrap;
+        }
+        .nav-brand span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(14px, 1.8vw, 24px);
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .nav-actions {
             display: flex;
             align-items: center;
             gap: 8px;
         }
-
-        .nav-logo i {
-            color: var(--primary);
-            animation: heartbeat 1.5s infinite;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
         .icon-btn {
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: var(--bg-glass);
             border: 1px solid var(--border-glass);
-            color: var(--text-main);
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: var(--transition-smooth);
-            font-size: 1.1rem;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            flex-shrink: 0;
         }
-
-        .icon-btn:hover {
+        .icon-btn:hover, .icon-btn:active {
             background: var(--primary);
             border-color: var(--primary);
-            transform: scale(1.1);
+            transform: scale(1.08);
+            box-shadow: 0 0 14px var(--primary-glow);
+        }
+        .hamburger-btn {
+            display: none;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-nav-menu {
+            position: fixed;
+            top: 72px;
+            left: 14px;
+            right: 14px;
+            background: rgba(22, 10, 36, 0.96);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            animation: slideDownMenu 0.3s ease forwards;
+        }
+        .mobile-nav-menu.active {
+            display: flex;
+        }
+        @keyframes slideDownMenu {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .mobile-nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .mobile-nav-menu a:hover {
+            background: rgba(255, 45, 117, 0.15);
+            border-color: var(--primary);
+            color: #ffaac4;
+        }
+
+        /* Floating Quick Action Pill for Mobile */
+        .mobile-quick-bar {
+            display: none;
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(18, 8, 28, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            padding: 6px 14px;
+            z-index: 1200;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            gap: 10px;
+        }
+        .mobile-quick-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            padding: 4px 8px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .mobile-quick-btn i {
+            font-size: 1.15rem;
+            color: var(--secondary);
+        }
+        .mobile-quick-btn:hover, .mobile-quick-btn:active {
+            color: #fff;
         }
 
         /* ==========================================================================
-           3. HERO SECTION & BADGES FOR NISHITA SHARMA
+           3. HERO SPOTLIGHT SECTION
            ========================================================================== */
-        .hero {
+        .hero-section {
             min-height: 100vh;
-            padding-top: 150px;
-            padding-bottom: 80px;
+            padding-top: clamp(100px, 15vw, 140px);
+            padding-bottom: clamp(60px, 10vw, 80px);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            position: relative;
         }
-
         .hero-content {
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
+            width: 100%;
         }
-
-        /* UNCROPPED HERO AVATAR CONTAINER */
+        
+        /* Hero Avatar */
         .hero-avatar-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 24px;
+            margin-bottom: clamp(20px, 4vw, 30px);
         }
-
-        .hero-avatar-card {
-            width: 210px;
-            height: 250px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 3px solid var(--secondary);
-            padding: 8px;
-            box-shadow: 0 0 40px var(--primary-glow);
-            animation: floatSlow 4s ease-in-out infinite;
+        .hero-avatar-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--primary), var(--secondary), var(--accent-gold), var(--accent-violet), var(--primary));
+            animation: rotateConic 8s linear infinite;
+            filter: blur(3px);
+            z-index: 1;
+        }
+        @keyframes rotateConic {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hero-avatar-box {
+            position: relative;
+            width: clamp(150px, 34vw, 210px);
+            height: clamp(150px, 34vw, 210px);
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #1a0d28;
+            z-index: 2;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            background: #140d22;
+        }
+        .hero-avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.6s ease;
+        }
+        .hero-avatar-wrapper:hover .hero-avatar-box img {
+            transform: scale(1.08);
+        }
+        .hero-crown-badge {
+            position: absolute;
+            top: -12px;
+            right: 8px;
+            background: linear-gradient(135deg, var(--accent-gold), #ff8800);
+            color: #3b1b00;
+            width: clamp(36px, 8vw, 44px);
+            height: clamp(36px, 8vw, 44px);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            z-index: 4;
+            box-shadow: 0 6px 16px rgba(255, 190, 11, 0.5);
+            animation: bounceCrown 2.5s infinite ease-in-out;
         }
-
-        /* CRITICAL: UNCROPPED DISPLAY */
-        .hero-avatar-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Guarantee NO cutting/cropping */
-            border-radius: 14px;
-        }
-
-        .hero-avatar-crown {
-            position: absolute;
-            top: -24px;
-            right: -10px;
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            transform: rotate(20deg);
-            filter: drop-shadow(0 4px 12px rgba(255, 183, 3, 0.6));
-            animation: heartbeat 2s infinite;
+        @keyframes bounceCrown {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(8deg); }
         }
 
         .hero-title {
             font-family: var(--font-title);
-            font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+            font-size: clamp(2rem, 6.5vw, 4.2rem);
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.18;
             margin-bottom: 18px;
+            letter-spacing: -0.5px;
+            word-break: break-word;
         }
-
-        .hero-title span.name {
-            font-family: var(--font-script);
-            color: var(--secondary);
-            font-size: 1.25em;
+        .hero-title .name-highlight {
+            background: linear-gradient(135deg, #ffffff 0%, #ffd0df 40%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: inline-block;
-            text-shadow: 0 0 25px rgba(5, 217, 232, 0.6);
+            filter: drop-shadow(0 4px 15px rgba(255, 45, 117, 0.4));
         }
 
-        .hero-subtitle {
-            font-size: 1.2rem;
+        .hero-sub {
+            font-size: clamp(0.98rem, 2.5vw, 1.22rem);
             color: var(--text-muted);
-            margin-bottom: 30px;
-            line-height: 1.8;
-            max-width: 780px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 740px;
+            margin: 0 auto 28px auto;
+            line-height: 1.7;
+        }
+        .hero-sub b {
+            color: #fff;
+            font-weight: 600;
         }
 
-        /* Identity Badges Grid */
+        /* Identity Pills */
         .identity-tags {
             display: flex;
-            justify-content: center;
-            gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 35px;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: clamp(25px, 5vw, 40px);
         }
-
         .id-tag {
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-glass);
-            padding: 8px 18px;
             border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #ffffff;
+            padding: 7px clamp(12px, 2.5vw, 18px);
+            font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+            color: #e6dbf7;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(8px);
+            gap: 6px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
-
-        .id-tag i {
-            color: var(--accent-gold);
-        }
-
-        /* Live Meeting Counter (2 Days Ago Counter!) */
-        .timer-card {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            padding: 24px;
-            margin: 30px auto 40px auto;
-            max-width: 700px;
-        }
-
-        .timer-unit {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--radius-md);
-            padding: 16px 12px;
-            border: 1px solid rgba(5, 217, 232, 0.15);
-        }
-
-        .timer-num {
-            font-family: var(--font-title);
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--secondary);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .timer-label {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
+        .id-tag:hover {
+            border-color: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+            background: rgba(255, 45, 117, 0.12);
         }
 
         .hero-cta {
             display: flex;
-            gap: 16px;
+            align-items: center;
             justify-content: center;
+            gap: clamp(12px, 3vw, 18px);
             flex-wrap: wrap;
+        }
+        .hero-cta .btn {
+            flex: 0 1 auto;
         }
 
         /* ==========================================================================
-           4. SECRET BESTIE LETTER
+           4. SPECIAL "PAST KO BHUL JAO" WAX-SEALED LETTER
            ========================================================================== */
-        .envelope-wrapper {
-            width: 100%;
-            max-width: 680px;
+        .letter-section {
+            padding: clamp(60px, 10vw, 90px) 0;
+            position: relative;
+        }
+        .letter-container-card {
+            max-width: 860px;
             margin: 0 auto;
+            position: relative;
+            background: linear-gradient(145deg, rgba(28, 14, 44, 0.88), rgba(18, 9, 28, 0.96));
+            border: 2px solid rgba(255, 154, 60, 0.3);
+            border-radius: var(--radius-xl);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            padding: clamp(30px, 6vw, 55px) clamp(18px, 4vw, 45px);
+        }
+        .letter-container-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent-gold), var(--primary));
         }
 
-        .envelope-card {
-            background: linear-gradient(135deg, #1b0e30 0%, #0e071c 100%);
-            border: 2px solid var(--border-glass);
+        /* Wax Seal */
+        .wax-seal-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .wax-seal {
+            width: clamp(68px, 14vw, 84px);
+            height: clamp(68px, 14vw, 84px);
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #ff4d6d, #b5179e, #800f2f);
+            box-shadow: 0 8px 24px rgba(255, 45, 117, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+            margin: 0 auto 12px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            color: #fff;
+            border: 3px solid rgba(255, 255, 255, 0.25);
+            transition: var(--transition);
+        }
+        .wax-seal:hover {
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 12px 30px rgba(255, 45, 117, 0.7);
+        }
+        .wax-seal-hint {
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+            color: #ff9a3c;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Letter Body */
+        .letter-body-content {
+            display: none;
+            animation: fadeInLetter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInLetter {
+            0% { opacity: 0; transform: translateY(18px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .letter-greeting {
+            font-family: var(--font-title);
+            font-size: clamp(1.4rem, 4vw, 1.85rem);
+            color: #ffbe0b;
+            margin-bottom: 18px;
+            border-bottom: 1px dashed rgba(255, 190, 11, 0.3);
+            padding-bottom: 10px;
+        }
+        .letter-text {
+            font-size: clamp(1rem, 2.4vw, 1.15rem);
+            color: #ede3fa;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .letter-text p {
+            margin-bottom: 16px;
+        }
+        .letter-highlight-quote {
+            background: rgba(255, 45, 117, 0.12);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: clamp(14px, 3vw, 20px) clamp(16px, 3vw, 24px);
+            margin: 22px 0;
+            font-family: var(--font-title);
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+            color: #fff;
+            line-height: 1.6;
+        }
+        .letter-sign {
+            font-family: var(--font-script);
+            font-size: clamp(1.8rem, 4.5vw, 2.3rem);
+            color: var(--secondary);
+            text-align: right;
+            margin-top: 25px;
+        }
+
+        /* Worry Shredder */
+        .worry-burner-box {
+            margin-top: clamp(28px, 5vw, 40px);
+            background: rgba(0, 0, 0, 0.38);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: var(--radius-lg);
-            padding: 45px 30px;
+            padding: clamp(18px, 4vw, 26px);
+            text-align: center;
+        }
+        .burner-input-group {
+            display: flex;
+            gap: 10px;
+            max-width: 550px;
+            margin: 16px auto 0 auto;
+            flex-wrap: wrap;
+        }
+        .burner-input {
+            flex: 1 1 240px;
+            padding: 12px 18px;
+            border-radius: 50px;
+            border: 1px solid var(--border-glass);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            outline: none;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            min-width: 0;
+        }
+        .burner-input:focus {
+            border-color: var(--secondary);
+        }
+        .burner-input-group .btn {
+            flex: 0 1 auto;
+        }
+
+        /* ==========================================================================
+           5. SOULFUL HINDI SHAYARIS & POETIC QUOTES SECTION
+           ========================================================================== */
+        .shayari-section {
+            padding: clamp(60px, 10vw, 90px) 0;
+        }
+        .shayari-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: clamp(20px, 3vw, 28px);
+        }
+        .shayari-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            padding: clamp(24px, 4vw, 32px) clamp(18px, 3.5vw, 26px);
+            backdrop-filter: blur(14px);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        .shayari-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--secondary);
+            box-shadow: 0 14px 30px rgba(255, 154, 60, 0.22);
+        }
+        .shayari-quote-mark {
+            font-size: 2.8rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+            color: rgba(255, 45, 117, 0.22);
+            position: absolute;
+            top: 14px;
+            right: 20px;
+        }
+        .shayari-hindi {
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+            font-weight: 500;
+            color: #ffeedb;
+            line-height: 1.75;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 2;
+        }
+        .shayari-translation {
+            font-size: clamp(0.88rem, 2.2vw, 0.95rem);
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 12px;
+            font-style: italic;
+            line-height: 1.55;
+        }
+        .shayari-footer {
+            margin-top: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .shayari-tag {
+            font-size: 0.78rem;
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .shayari-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .mini-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+        .mini-btn:hover, .mini-btn:active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        /* ==========================================================================
+           6. ANSHIKA'S AURA & MEMORY GALLERY (4 FULL UNCROPPED IMAGES)
+           ========================================================================== */
+        .gallery-section {
+            padding: clamp(60px, 10vw, 90px) 0;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+            gap: clamp(22px, 3.5vw, 30px);
+        }
+        .polaroid-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 14px 14px 20px 14px;
+            color: #1a1a2e;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.6);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            text-align: center;
+        }
+        @media (min-width: 901px) {
+            .polaroid-card:nth-child(1) { transform: rotate(-2deg); }
+            .polaroid-card:nth-child(2) { transform: rotate(2deg); }
+            .polaroid-card:nth-child(3) { transform: rotate(-2deg); }
+            .polaroid-card:nth-child(4) { transform: rotate(1.5deg); }
+        }
+        .polaroid-card:hover, .polaroid-card:active {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 20px 45px rgba(255, 45, 117, 0.38);
+            z-index: 10;
+        }
+        .polaroid-tape {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 22px;
+            background: rgba(255, 230, 160, 0.75);
+            border-left: 2px dashed rgba(200, 180, 100, 0.5);
+            border-right: 2px dashed rgba(200, 180, 100, 0.5);
+            backdrop-filter: blur(2px);
+            z-index: 3;
+        }
+        .polaroid-img-wrapper {
+            width: 100%;
+            height: clamp(270px, 48vw, 370px);
+            background: #140d22;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .polaroid-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.5s ease;
+        }
+        .polaroid-card:hover .polaroid-img {
+            transform: scale(1.05);
+        }
+        .polaroid-caption {
+            font-family: var(--font-script);
+            font-size: clamp(1.5rem, 4vw, 1.85rem);
+            color: #2b112c;
+            margin-top: 12px;
+            font-weight: 700;
+        }
+        .polaroid-sub {
+            font-size: clamp(0.82rem, 2vw, 0.88rem);
+            color: #645778;
+            margin-top: 2px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .polaroid-tag-badge {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #fff0f5;
+            color: #d81159;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* ==========================================================================
+           7. BESTIE JOKES & LAUGHTER GENERATOR ("हंसी का फव्वारा")
+           ========================================================================== */
+        .jokes-section {
+            padding: clamp(60px, 10vw, 90px) 0;
+        }
+        .joke-interactive-card {
+            max-width: 820px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(35, 18, 55, 0.88), rgba(18, 9, 30, 0.96));
+            border: 2px solid rgba(0, 240, 255, 0.3);
+            border-radius: var(--radius-xl);
+            padding: clamp(28px, 5vw, 45px) clamp(18px, 4vw, 35px);
             text-align: center;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            transition: var(--transition-smooth);
+            box-shadow: 0 16px 45px rgba(0, 240, 255, 0.15);
+        }
+        .joke-icon-floating {
+            font-size: clamp(2.8rem, 6vw, 3.5rem);
+            margin-bottom: 12px;
+            animation: wobbleEmoji 2s infinite ease-in-out;
+            display: inline-block;
+        }
+        @keyframes wobbleEmoji {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-8deg) scale(1.08); }
+            75% { transform: rotate(8deg) scale(1.08); }
+        }
+        .joke-display-box {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .joke-text {
+            font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+        .joke-subtext {
+            font-size: clamp(0.85rem, 2.2vw, 0.98rem);
+            color: #a8ecf0;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .jokes-btn-row {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .jokes-btn-row .btn {
+            flex: 0 1 auto;
         }
 
-        .wax-seal {
-            width: 85px;
-            height: 85px;
-            background: linear-gradient(135deg, #ff2a6d 0%, #d800bb 100%);
-            border-radius: 50%;
+        /* 3 Fun Bestie Banter Cards */
+        .banter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(16px, 3vw, 24px);
+            margin-top: 35px;
+        }
+        .banter-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3vw, 26px) clamp(16px, 3vw, 22px);
+            text-align: left;
+            transition: var(--transition);
+        }
+        .banter-card:hover {
+            border-color: var(--accent-gold);
+            background: rgba(255, 190, 11, 0.08);
+            transform: translateY(-4px);
+        }
+        .banter-card h4 {
+            font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .banter-card p {
+            color: var(--text-muted);
+            font-size: clamp(0.88rem, 2.2vw, 0.95rem);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           8. MOOD BOOSTER & HAPPINESS VIBE-O-METER
+           ========================================================================== */
+        .booster-section {
+            padding: clamp(60px, 10vw, 90px) 0;
+        }
+        .booster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+            gap: clamp(14px, 2.5vw, 20px);
+            margin-bottom: clamp(35px, 6vw, 50px);
+        }
+        .booster-tile {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3vw, 25px) clamp(14px, 2.5vw, 20px);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .booster-tile:hover, .booster-tile:active {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            background: rgba(255, 45, 117, 0.15);
+            box-shadow: 0 10px 24px rgba(255, 45, 117, 0.3);
+        }
+        .booster-tile i {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            margin-bottom: 10px;
+            color: var(--secondary);
+            display: inline-block;
+        }
+        .booster-tile h4 {
+            font-size: clamp(1rem, 2.4vw, 1.1rem);
+            margin-bottom: 5px;
+        }
+        .booster-tile p {
+            font-size: clamp(0.8rem, 2vw, 0.85rem);
+            color: var(--text-muted);
+        }
+
+        /* Vibe-O-Meter */
+        .vibe-meter-box {
+            max-width: 580px;
+            margin: 0 auto;
+            text-align: center;
+            padding: clamp(28px, 5vw, 42px) clamp(16px, 4vw, 32px);
+        }
+        .meter-dial {
+            position: relative;
+            width: clamp(160px, 35vw, 200px);
+            height: clamp(160px, 35vw, 200px);
             margin: 0 auto 20px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 30px rgba(255, 42, 109, 0.6);
-            border: 3px dashed var(--accent-gold);
-            color: #ffffff;
-            font-size: 2.2rem;
-            cursor: pointer;
-            transition: var(--transition-smooth);
+            flex-direction: column;
+            border-radius: 50%;
+            background: radial-gradient(circle, #1d0f2f 0%, #0d0617 100%);
+            border: 5px double var(--secondary);
+            box-shadow: 0 0 35px rgba(255, 154, 60, 0.32);
         }
-
-        .wax-seal:hover {
-            transform: scale(1.15) rotate(12deg);
+        .meter-num {
+            font-family: var(--font-title);
+            font-size: clamp(2.2rem, 5vw, 2.8rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .letter-content {
-            display: none;
-            text-align: left;
-            background: #fffdf9;
-            color: #2b1b17;
-            padding: 38px;
-            border-radius: 14px;
-            margin-top: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
-            font-family: 'Playfair Display', serif;
-            line-height: 1.9;
-            font-size: 1.1rem;
+        .meter-label {
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
         }
-
-        .letter-salutation {
-            font-family: var(--font-script);
-            font-size: 2.4rem;
-            color: #c1121f;
-            margin-bottom: 15px;
-        }
-
-        .letter-body p {
-            margin-bottom: 16px;
-            color: #3d261d;
-        }
-
-        .letter-ps {
-            background: #ffe6eb;
-            padding: 14px 18px;
-            border-left: 4px solid var(--primary);
-            border-radius: 6px;
-            font-size: 0.98rem;
-            font-style: italic;
-            color: #800f2f;
-            margin-top: 22px;
-        }
-
-        .letter-sign {
-            text-align: right;
-            font-family: var(--font-script);
-            font-size: 2.4rem;
-            color: #c1121f;
-            margin-top: 25px;
+        .meter-status {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            font-weight: 600;
+            color: #ffd4e0;
+            margin-bottom: 22px;
+            min-height: 28px;
         }
 
         /* ==========================================================================
-           5. UNCROPPED POLAROID MEMORY GALLERY (ZERO CUTTING GUARANTEE)
+           9. BESTIE VOUCHERS / COUPONS
            ========================================================================== */
-        .gallery-grid {
+        .coupons-section {
+            padding: clamp(60px, 10vw, 90px) 0;
+        }
+        .coupons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(18px, 3vw, 24px);
         }
-
-        .polaroid-card {
-            background: #ffffff;
-            padding: 16px 16px 24px 16px;
-            border-radius: 6px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            transition: var(--transition-smooth);
+        .coupon-card {
+            background: linear-gradient(135deg, rgba(30, 15, 45, 0.72), rgba(20, 10, 30, 0.88));
+            border: 2px dashed rgba(255, 154, 60, 0.4);
+            border-radius: var(--radius-lg);
+            padding: clamp(20px, 3.5vw, 26px);
             position: relative;
-            cursor: pointer;
-            transform-origin: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
         }
-
-        .polaroid-card:nth-child(odd) { transform: rotate(-2.5deg); }
-        .polaroid-card:nth-child(even) { transform: rotate(2.5deg); }
-        .polaroid-card:nth-child(3n) { transform: rotate(-1.2deg); }
-
-        .polaroid-card:hover {
-            transform: scale(1.05) rotate(0deg) translateY(-10px) !important;
-            z-index: 10;
-            box-shadow: 0 25px 50px rgba(5, 217, 232, 0.4);
+        .coupon-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--secondary);
+            box-shadow: 0 10px 28px rgba(255, 154, 60, 0.2);
         }
-
-        .polaroid-tape {
+        .coupon-stamp {
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90px;
-            height: 26px;
-            background: rgba(255, 255, 255, 0.65);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 2;
+            top: 18px;
+            right: -32px;
+            background: #2ec4b6;
+            color: #032b28;
+            font-weight: 800;
+            padding: 4px 34px;
+            transform: rotate(35deg);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .coupon-card.redeemed {
+            border-color: #2ec4b6;
+            opacity: 0.85;
+        }
+        .coupon-card.redeemed .coupon-stamp {
+            opacity: 1;
+        }
+        .coupon-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .coupon-pill {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .coupon-title {
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+        .coupon-desc {
+            font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            line-height: 1.5;
         }
 
-        /* CRITICAL CONTAINER DESIGN FOR UNCROPPED IMAGES */
-        .polaroid-img-wrapper {
+        /* ==========================================================================
+           10. THE FRIENDSHIP PACT & PROPOSAL SECTION
+           ========================================================================== */
+        .pact-section {
+            padding: clamp(70px, 12vw, 100px) 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .pact-card {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: clamp(35px, 6vw, 60px) clamp(18px, 4vw, 40px);
+            background: radial-gradient(circle at center, rgba(45, 18, 70, 0.85), rgba(15, 6, 25, 0.98));
+            border: 2px solid var(--border-glow);
+            border-radius: var(--radius-xl);
             position: relative;
-            width: 100%;
-            height: 320px; /* Generous height */
-            background: #150d26; /* Elegant dark backdrop inside frame */
-            border-radius: 4px;
+            box-shadow: 0 18px 50px rgba(255, 45, 117, 0.25);
+            overflow: hidden;
+        }
+        .pact-title {
+            font-family: var(--font-title);
+            font-size: clamp(1.8rem, 4.5vw, 3rem);
+            margin-bottom: 16px;
+            color: #fff;
+            line-height: 1.25;
+        }
+        .pact-text {
+            font-size: clamp(1.02rem, 2.5vw, 1.2rem);
+            color: #e3d5f5;
+            max-width: 620px;
+            margin: 0 auto clamp(25px, 5vw, 40px) auto;
+            line-height: 1.7;
+        }
+        .pact-actions {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
-            overflow: hidden;
+            gap: clamp(14px, 3vw, 25px);
+            flex-wrap: wrap;
+            position: relative;
+            min-height: 70px;
         }
-
-        /* CRITICAL: NO CUTTING / NO CROPPING (`object-fit: contain`) */
-        .polaroid-img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain; /* Full image visible guaranteed */
-            border-radius: 4px;
-            transition: transform 0.4s ease;
-        }
-
-        .polaroid-card:hover .polaroid-img {
-            transform: scale(1.04);
-        }
-
-        .polaroid-caption {
-            font-family: var(--font-script);
-            font-size: 1.55rem;
-            color: #2b1b17;
-            text-align: center;
-            margin-top: 14px;
+        .btn-yes {
+            padding: clamp(14px, 3vw, 18px) clamp(22px, 4vw, 38px);
+            font-size: clamp(1rem, 2.6vw, 1.2rem);
             font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .btn-no {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffaac4;
+            border: 1px solid rgba(255, 45, 117, 0.3);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s;
+            user-select: none;
         }
 
-        .polaroid-tag {
+        /* ==========================================================================
+           11. CERTIFICATE MODAL
+           ========================================================================== */
+        .cert-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(14px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(12px, 3vw, 20px);
+            overflow-y: auto;
+        }
+        .cert-modal.active {
+            display: flex;
+            animation: zoomCert 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes zoomCert {
+            0% { opacity: 0; transform: scale(0.75); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .cert-sheet {
+            background: #fffdf8;
+            color: #2b112c;
+            max-width: 780px;
+            width: 100%;
+            padding: clamp(25px, 5vw, 50px) clamp(16px, 4vw, 40px);
+            border-radius: var(--radius-lg);
+            border: clamp(6px, 1.5vw, 12px) double #d4af37;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.85);
+            position: relative;
+            max-height: 92vh;
+            overflow-y: auto;
+        }
+        .cert-sheet-header {
+            font-family: var(--font-title);
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            color: #800f2f;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+        .cert-sheet-name {
+            font-family: var(--font-script);
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            color: #c1121f;
+            margin: 10px 0;
+            border-bottom: 2px solid #d4af37;
             display: inline-block;
-            font-size: 0.8rem;
-            font-family: var(--font-body);
-            background: #e0f7fa;
-            color: #0077b6;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-top: 6px;
-            font-weight: 600;
+            padding: 0 clamp(12px, 3vw, 30px);
+            word-break: break-word;
+        }
+        .cert-sheet-desc {
+            font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+            color: #3b2238;
+            margin: 12px auto;
+            max-width: 620px;
+            line-height: 1.65;
+        }
+        .cert-signatures {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-around;
+            font-family: var(--font-script);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #800f2f;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        /* Lightbox Modal */
+        /* ==========================================================================
+           12. FULL UNCROPPED LIGHTBOX MODAL
+           ========================================================================== */
         .lightbox-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(8, 4, 18, 0.95);
-            backdrop-filter: blur(15px);
-            z-index: 2000;
+            background: rgba(8, 3, 14, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 3500;
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 30px;
+            padding: 20px 14px;
         }
-
         .lightbox-modal.active {
             display: flex;
-            animation: fadeIn 0.3s ease;
+            animation: fadeInLightbox 0.25s ease;
         }
-
-        .lightbox-content {
-            max-width: 800px;
-            width: 100%;
-            background: #ffffff;
-            padding: 24px;
-            border-radius: var(--radius-md);
-            text-align: center;
+        @keyframes fadeInLightbox {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .lightbox-box {
             position: relative;
-            color: #2b1b17;
-        }
-
-        /* FULL LIGHTBOX UNCROPPED IMAGE */
-        .lightbox-img {
+            max-width: 850px;
             width: 100%;
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .lightbox-close-btn {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.18);
+            border: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .lightbox-close-btn:hover {
+            background: var(--primary);
+        }
+        .lightbox-img-wrapper {
+            max-height: 70vh;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--border-glass);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            width: 100%;
+        }
+        .lightbox-img-wrapper img {
+            max-width: 100%;
             max-height: 70vh;
             object-fit: contain;
-            border-radius: 8px;
-            background: #0f0a1c;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -18px;
-            right: -18px;
-            width: 44px;
-            height: 44px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-        }
-
-        /* ==========================================================================
-           6. NISHITA'S BADASS & FUNNY FLIP CARDS
-           ========================================================================== */
-        .reasons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .flip-card {
-            height: 250px;
-            perspective: 1000px;
-            cursor: pointer;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d;
-        }
-
-        .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-front, .flip-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: var(--radius-lg);
-            padding: 30px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border-glass);
-        }
-
-        .flip-front {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-        }
-
-        .flip-front i {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 16px;
-        }
-
-        .flip-front h3 {
-            font-size: 1.35rem;
-            color: #ffffff;
-            font-family: var(--font-title);
-        }
-
-        .flip-back {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
-            color: white;
-            transform: rotateY(180deg);
-            box-shadow: 0 10px 30px rgba(255, 42, 109, 0.4);
-        }
-
-        .flip-back p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-
-        /* ==========================================================================
-           7. BESTIE VIBE-O-METER 3000
-           ========================================================================== */
-        .love-meter-box {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 45px 30px;
-            text-align: center;
-        }
-
-        .meter-dial-container {
-            position: relative;
-            width: 220px;
-            height: 220px;
-            margin: 30px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .meter-circle {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 12px solid rgba(255, 255, 255, 0.1);
-            border-top: 12px solid var(--primary);
-            border-right: 12px solid var(--secondary);
-            border-left: 12px solid var(--accent-gold);
-            animation: spinSlow 20s linear infinite;
-        }
-
-        @keyframes spinSlow {
-            100% { transform: rotate(360deg); }
-        }
-
-        .meter-display {
-            position: absolute;
-            font-family: var(--font-title);
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-shadow: 0 0 15px var(--primary-glow);
-        }
-
-        .meter-sub {
-            font-size: 0.85rem;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
             display: block;
         }
-
-        .meter-status-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            min-height: 36px;
+        .lightbox-caption-text {
+            font-family: var(--font-title);
+            font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+            color: #fff;
+            margin-top: 12px;
+        }
+        .lightbox-tag-text {
+            color: var(--secondary);
+            font-size: clamp(0.85rem, 2.5vw, 0.98rem);
+            margin-top: 3px;
         }
 
         /* ==========================================================================
-           8. REDEEMABLE BESTIE COUPONS FOR NISHITA
+           13. SETTINGS / PERSONALIZER DRAWER
            ========================================================================== */
-        .coupons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .coupon-card {
-            background: linear-gradient(135deg, rgba(35, 18, 55, 0.85) 0%, rgba(15, 7, 28, 0.95) 100%);
-            border: 2px dashed var(--secondary);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: var(--transition-smooth);
-        }
-
-        .coupon-card.redeemed {
-            opacity: 0.65;
-            border-color: #6c757d;
-        }
-
-        .coupon-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 14px;
-        }
-
-        .coupon-badge {
-            background: rgba(5, 217, 232, 0.2);
-            color: var(--secondary);
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .coupon-title {
-            font-family: var(--font-title);
-            font-size: 1.35rem;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .coupon-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .coupon-stamp {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-15deg) scale(0);
-            border: 3px solid var(--primary);
-            color: var(--primary);
-            font-family: var(--font-title);
-            font-size: 1.8rem;
-            font-weight: 800;
-            padding: 8px 20px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            pointer-events: none;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background: rgba(11, 7, 25, 0.9);
-            z-index: 5;
-        }
-
-        .coupon-card.redeemed .coupon-stamp {
-            transform: translate(-50%, -50%) rotate(-15deg) scale(1);
-        }
-
-        /* ==========================================================================
-           9. THE BESTIE PROPOSAL ("BESTIES FOR LIFE?")
-           ========================================================================== */
-        .proposal-section {
-            text-align: center;
-            padding: 110px 0;
-            background: radial-gradient(circle at center, rgba(5, 217, 232, 0.15) 0%, transparent 70%);
-        }
-
-        .proposal-box {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            position: relative;
-        }
-
-        .proposal-title {
-            font-family: var(--font-script);
-            font-size: clamp(3rem, 6vw, 4.8rem);
-            color: var(--secondary);
-            margin-bottom: 15px;
-            text-shadow: 0 0 25px rgba(5, 217, 232, 0.5);
-        }
-
-        .proposal-text {
-            font-size: 1.25rem;
-            color: var(--text-main);
-            margin-bottom: 45px;
-        }
-
-        .proposal-actions {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            position: relative;
-            min-height: 80px;
-        }
-
-        .btn-yes {
-            background: linear-gradient(135deg, #05d9e8 0%, #0077b6 100%);
-            padding: 16px 48px;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 30px rgba(5, 217, 232, 0.4);
-        }
-
-        .btn-yes:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(5, 217, 232, 0.7);
-        }
-
-        .btn-no {
-            position: relative;
-            transition: all 0.2s ease;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-            border: 1px solid var(--border-glass);
-            padding: 16px 36px;
-            font-size: 1.1rem;
-        }
-
-        /* Certificate Modal */
-        .certificate-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(8, 4, 18, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 3000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .certificate-modal.active {
-            display: flex;
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        @keyframes popIn {
-            0% { transform: scale(0.7); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .certificate-card {
-            background: #fffdf9;
-            color: #2b1b17;
-            max-width: 750px;
-            width: 100%;
-            padding: 45px 35px;
-            border-radius: 16px;
-            border: 12px double #d4af37;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-            position: relative;
-        }
-
-        .cert-header {
-            font-family: var(--font-title);
-            font-size: 2.2rem;
-            color: #800f2f;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .cert-name {
-            font-family: var(--font-script);
-            font-size: 3.4rem;
-            color: #c1121f;
-            margin: 15px 0;
-            border-bottom: 2px solid #d4af37;
-            display: inline-block;
-            padding: 0 25px;
-        }
-
-        /* Personalizer Drawer */
         .drawer-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0,0,0,0.75);
-            backdrop-filter: blur(10px);
-            z-index: 2500;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 4000;
             opacity: 0;
             pointer-events: none;
-            transition: var(--transition-smooth);
+            transition: var(--transition);
         }
-
         .drawer-overlay.active {
             opacity: 1;
             pointer-events: all;
         }
-
-        .drawer-card {
+        .drawer-panel {
             position: fixed;
             top: 0;
-            right: -420px;
+            right: -400px;
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
             height: 100vh;
-            background: var(--bg-dark);
+            background: #140a20;
             border-left: 1px solid var(--border-glass);
-            padding: 35px 25px;
-            z-index: 2600;
-            transition: var(--transition-smooth);
+            padding: 30px 22px;
+            z-index: 4100;
+            transition: var(--transition);
             overflow-y: auto;
-            box-shadow: -10px 0 40px rgba(0,0,0,0.6);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.7);
         }
-
-        .drawer-overlay.active .drawer-card {
+        .drawer-overlay.active .drawer-panel {
             right: 0;
         }
-
-        .form-group {
+        .form-item {
             margin-bottom: 20px;
         }
-
-        .form-group label {
+        .form-item label {
             display: block;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             font-weight: 600;
         }
-
-        .form-input {
+        .form-item input {
             width: 100%;
             padding: 12px 16px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius-sm);
             color: white;
-            font-family: var(--font-body);
-            font-size: 1rem;
+            font-size: 0.95rem;
+            outline: none;
+        }
+        .form-item input:focus {
+            border-color: var(--primary);
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .timer-card { grid-template-columns: repeat(2, 1fr); }
-            .hero-title { font-size: 2.5rem; }
-            .proposal-actions { flex-direction: column; }
+        /* ==========================================================================
+           14. FOOTER
+           ========================================================================== */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 45px 20px 80px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+            position: relative;
+            z-index: 2;
+        }
+        footer p {
+            margin-bottom: 8px;
+        }
+        .footer-heart {
+            color: var(--primary);
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        /* ==========================================================================
+           15. RESPONSIVE BREAKPOINTS
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger-btn {
+                display: flex;
+            }
+            .mobile-quick-bar {
+                display: flex;
+            }
+            .navbar {
+                width: calc(100% - 20px);
+                padding: 8px 14px;
+            }
+            .hero-section {
+                padding-top: 105px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .burner-input-group {
+                flex-direction: column;
+            }
+            .burner-input-group .btn {
+                width: 100%;
+            }
+            .pact-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-yes, .btn-no {
+                width: 100%;
+                max-width: 320px;
+            }
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-cta .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            .jokes-btn-row {
+                flex-direction: column;
+            }
+            .jokes-btn-row .btn {
+                width: 100%;
+            }
+            .lightbox-close-btn {
+                top: -38px;
+                right: 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Canvas Background for Hearts & Sparkles -->
+    <!-- Background Canvas for Floating Particles -->
     <canvas id="bgCanvas"></canvas>
 
-    <!-- Top Sticky Navigation Bar -->
-    <nav class="navbar">
-        <a href="#" class="nav-logo">
-            <i class="fa-solid fa-heart"></i>
-            <span id="navGirlName">Nishita Sharma</span>
+    <!-- FLOATING NAVIGATION BAR -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-brand">
+            <i class="fa-solid fa-sparkles" style="color: var(--secondary);"></i>
+            <span>Anshika's Corner</span>
         </a>
+
+        <!-- Desktop Navigation Links -->
         <ul class="nav-links">
-            <li><a href="#letter"><i class="fa-solid fa-envelope-open-text"></i> Letter</a></li>
-            <li><a href="#gallery"><i class="fa-solid fa-images"></i> Memories</a></li>
-            <li><a href="#reasons"><i class="fa-solid fa-bolt"></i> Nishita Special</a></li>
-            <li><a href="#coupons"><i class="fa-solid fa-ticket"></i> Bestie Vouchers</a></li>
-            <li><a href="#lovemeter"><i class="fa-solid fa-gauge-high"></i> Vibe-o-Meter</a></li>
-            <li><a href="#proposal"><i class="fa-solid fa-handshake"></i> Besties Forever?</a></li>
+            <li><a href="#letter"><i class="fa-solid fa-envelope-open-text"></i> Past Ko Bhul Jao</a></li>
+            <li><a href="#shayari"><i class="fa-solid fa-feather-pointed"></i> Shayaris</a></li>
+            <li><a href="#gallery"><i class="fa-solid fa-camera-retro"></i> Memories</a></li>
+            <li><a href="#jokes"><i class="fa-solid fa-face-laugh-squint"></i> Jokes & Laughs</a></li>
+            <li><a href="#booster"><i class="fa-solid fa-bolt"></i> Mood Booster</a></li>
+            <li><a href="#coupons"><i class="fa-solid fa-ticket"></i> Vouchers</a></li>
+            <li><a href="#pact"><i class="fa-solid fa-hand-holding-heart"></i> The Pact</a></li>
         </ul>
+
+        <!-- Action Buttons -->
         <div class="nav-actions">
-            <button class="icon-btn" id="musicToggleBtn" title="Play Ambient Music">
+            <!-- Music Synthesizer / Ambient Audio Button -->
+            <button class="icon-btn" id="musicToggleBtn" title="Toggle Peaceful Ambient Harmony" aria-label="Music">
                 <i class="fa-solid fa-music"></i>
             </button>
-            <button class="icon-btn" id="openDrawerBtn" title="Customize Details">
+            <!-- Confetti Heart Cannon -->
+            <button class="icon-btn" id="heartShowerBtn" title="Shower Love & Confetti" aria-label="Love Shower">
+                <i class="fa-solid fa-heart" style="color: #ff2d75;"></i>
+            </button>
+            <!-- Personalizer Drawer Toggle -->
+            <button class="icon-btn" id="openDrawerBtn" title="Customize Names" aria-label="Settings">
                 <i class="fa-solid fa-sliders"></i>
+            </button>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="icon-btn hamburger-btn" id="mobileMenuBtn" title="Menu" aria-label="Open Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </nav>
 
-    <!-- MAIN SPA CONTENT -->
-    <main>
+    <!-- Mobile Slide-Down Menu -->
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+        <a href="#hero" onclick="closeMobileMenu()"><i class="fa-solid fa-crown" style="color: var(--accent-gold);"></i> Home & Spotlight</a>
+        <a href="#letter" onclick="closeMobileMenu()"><i class="fa-solid fa-envelope-open-text" style="color: var(--primary);"></i> Past Ko Bhul Jao 💌</a>
+        <a href="#shayari" onclick="closeMobileMenu()"><i class="fa-solid fa-feather-pointed" style="color: var(--secondary);"></i> Soulful Shayaris 📜</a>
+        <a href="#gallery" onclick="closeMobileMenu()"><i class="fa-solid fa-camera-retro" style="color: var(--accent-cyan);"></i> Memories & Photos 📸</a>
+        <a href="#jokes" onclick="closeMobileMenu()"><i class="fa-solid fa-face-laugh-squint" style="color: #ffbe0b;"></i> Daily Jokes & Laughs 😂</a>
+        <a href="#booster" onclick="closeMobileMenu()"><i class="fa-solid fa-bolt" style="color: var(--accent-violet);"></i> Mood Booster & Vibe-Meter ⚡</a>
+        <a href="#coupons" onclick="closeMobileMenu()"><i class="fa-solid fa-ticket" style="color: #2ec4b6;"></i> Redeemable Vouchers 🎟️</a>
+        <a href="#pact" onclick="closeMobileMenu()"><i class="fa-solid fa-hand-holding-heart" style="color: var(--primary);"></i> The Friendship Pact 👯‍♀️</a>
+    </div>
 
-        <!-- 1. HERO SECTION -->
-        <section class="hero" id="home">
+    <!-- Mobile Bottom Quick Navigation Bar -->
+    <div class="mobile-quick-bar">
+        <a href="#letter" class="mobile-quick-btn">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Letter</span>
+        </a>
+        <a href="#shayari" class="mobile-quick-btn">
+            <i class="fa-solid fa-feather"></i>
+            <span>Shayari</span>
+        </a>
+        <a href="#gallery" class="mobile-quick-btn">
+            <i class="fa-solid fa-camera"></i>
+            <span>Photos</span>
+        </a>
+        <a href="#jokes" class="mobile-quick-btn">
+            <i class="fa-solid fa-face-laugh-squint"></i>
+            <span>Jokes</span>
+        </a>
+        <a href="#pact" class="mobile-quick-btn">
+            <i class="fa-solid fa-star"></i>
+            <span>Pact</span>
+        </a>
+    </div>
+
+
+    <main>
+        <!-- ==========================================================================
+           1. HERO SPOTLIGHT SECTION
+           ========================================================================== -->
+        <section class="hero-section" id="hero">
             <div class="container hero-content">
                 
-                <!-- UNCROPPED HERO AVATAR -->
+                <!-- Rotating Glow Hero Avatar -->
                 <div class="hero-avatar-wrapper">
-                    <i class="fa-solid fa-crown hero-avatar-crown"></i>
-                    <div class="hero-avatar-card">
-                        <!-- UNCROPPED IMAGE DISPLAY -->
-                        <img src="images/WhatsApp Image 2026-09-04 at 11.33.13 AM (1).jpeg" alt="Nishita Sharma" id="heroImage">
+                    <div class="hero-avatar-ring"></div>
+                    <div class="hero-avatar-box">
+                        <img src="images/1.jpeg" alt="Anshika Khandelwal" id="heroAvatarImg">
+                    </div>
+                    <div class="hero-crown-badge" title="Queen of Smiles">
+                        <i class="fa-solid fa-crown"></i>
                     </div>
                 </div>
 
                 <div>
                     <span class="badge-pill">
-                        <i class="fa-solid fa-sparkles"></i> Bestie Edition • Exclusively For You
+                        <i class="fa-solid fa-heart"></i> Dedicated to My Bestest Friend • Anshika
                     </span>
                 </div>
 
                 <h1 class="hero-title">
-                    To My Amazing New Bestie, <br>
-                    <span class="name" id="displayGirlName">Nishita Sharma 💖✨</span>
+                    To The One & Only <br>
+                    <span class="name-highlight" id="displayGirlName">Anshika Khandelwal 🌸✨</span>
                 </h1>
 
-                <p class="hero-subtitle">
-                    We only met <b>2 days ago</b>, but it feels like we've been best friends for a lifetime! From your badass <b>Taekwondo kicks</b> 🥋 to building your startup <b>Fit Foundation</b> 🏋️‍♀️💼 and your passion for <b>Traveling & Exploring</b> ✈️🌄 — you are 100% one of a kind!
+                <p class="hero-sub">
+                    <b>"Past ko bhul jao, jo bhi tha... Bas hamesha mast raha karo aur khilkhilati raha karo!"</b><br>
+                    Your smile has an unmatched charm that brightens up the whole world. Here is a little corner of sunshine, beautiful shayaris, lovely jokes, and endless friendship made exclusively for you!
                 </p>
 
-                <!-- Nishita Identity Tags -->
+                <!-- Identity / Vibe Tags -->
                 <div class="identity-tags">
-                    <span class="id-tag"><i class="fa-solid fa-user-ninja"></i> Ex-Taekwondo Fighter 🥋</span>
-                    <span class="id-tag"><i class="fa-solid fa-briefcase"></i> Founder @ Fit Foundation 🏋️‍♀️</span>
-                    <span class="id-tag"><i class="fa-solid fa-plane"></i> Wanderlust Traveler ✈️</span>
-                    <span class="id-tag"><i class="fa-solid fa-clock"></i> Besties Since 2 Days Ago ⏳</span>
+                    <span class="id-tag"><i class="fa-solid fa-face-smile-beam" style="color: #ffbe0b;"></i> 100% Khilkhilati Smile 😊</span>
+                    <span class="id-tag"><i class="fa-solid fa-gem" style="color: #00f0ff;"></i> Pure & Rare Soul 💎</span>
+                    <span class="id-tag"><i class="fa-solid fa-shield-halved" style="color: #a855f7;"></i> Zero Past Baggage Zone 🕊️</span>
+                    <span class="id-tag"><i class="fa-solid fa-infinity" style="color: #ff2d75;"></i> Lifelong Bestie Bond 👯‍♀️</span>
                 </div>
 
-                <!-- Meeting Timer (2 Days & Counting) -->
-                <div class="timer-card glass-card">
-                    <div class="timer-unit">
-                        <div class="timer-num" id="countDays">02</div>
-                        <div class="timer-label">Days Known</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-num" id="countHours">00</div>
-                        <div class="timer-label">Hours</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-num" id="countMins">00</div>
-                        <div class="timer-label">Minutes</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-num" id="countSecs">00</div>
-                        <div class="timer-label">Seconds</div>
-                    </div>
-                </div>
-
+                <!-- Hero Action CTAs -->
                 <div class="hero-cta">
                     <a href="#letter" class="btn btn-primary">
-                        <i class="fa-solid fa-envelope"></i> Read Bestie Note 💌
+                        <i class="fa-solid fa-envelope-open-text"></i> Open Special Note 💌
                     </a>
-                    <a href="#proposal" class="btn btn-secondary">
-                        <i class="fa-solid fa-star"></i> Besties Forever? 👯‍♀️
+                    <a href="#jokes" class="btn btn-secondary">
+                        <i class="fa-solid fa-face-grin-squint"></i> Daily Laughs 😂
+                    </a>
+                    <a href="#gallery" class="btn btn-secondary">
+                        <i class="fa-solid fa-image"></i> View Gallery 📸
                     </a>
                 </div>
             </div>
         </section>
 
 
-        <!-- 2. WAX-SEALED BESTIE LETTER -->
-        <section id="letter">
+        <!-- ==========================================================================
+           2. SPECIAL "PAST KO BHUL JAO" WAX-SEALED LETTER
+           ========================================================================== -->
+        <section class="letter-section" id="letter">
             <div class="container">
                 <div class="section-header">
-                    <span class="badge-pill"><i class="fa-solid fa-envelope"></i> Special Note</span>
-                    <h2 class="section-title">A Message For You, Nishita</h2>
-                    <p class="section-subtitle">Click the red seal below to open your personal appreciation letter 💌</p>
+                    <span class="badge-pill"><i class="fa-solid fa-heart-pulse"></i> Dil Ki Baat</span>
+                    <h2 class="section-title">A Message Straight From The Heart</h2>
+                    <p class="section-subtitle">Click on the glowing wax seal below to break the seal and read your personal letter 💌</p>
                 </div>
 
-                <div class="envelope-wrapper">
-                    <div class="envelope-card">
-                        <div class="wax-seal" id="waxSeal" title="Click to break seal!">
+                <div class="letter-container-card">
+                    <!-- Wax Seal Interactive Element -->
+                    <div class="wax-seal-wrapper" id="waxSealWrapper">
+                        <div class="wax-seal" id="waxSeal">
                             <i class="fa-solid fa-heart"></i>
                         </div>
-                        <h3 style="font-family: var(--font-title); font-size: 1.4rem; color: var(--secondary);">
-                            Sealed With Infinite Bestie Appreciation ✨
-                        </h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">Tap seal to open</p>
+                        <div class="wax-seal-hint">Tap Seal To Unlock Your Letter ✨</div>
+                    </div>
 
-                        <!-- Letter Content -->
-                        <div class="letter-content" id="letterBody">
-                            <div class="letter-salutation">Hey Nishita! 👋✨</div>
-                            <div class="letter-body">
-                                <p>Honestly, it's wild to think we only met <b>2 days ago</b>. Some people take months to build a vibe, but with you, the instant connection was so effortless that it feels like I've known you for years!</p>
-                                <p>You are an absolute inspiration! A fierce <b>Taekwondo martial artist 🥋</b> who takes on any challenge, an ambitious startup founder building <b>Fit Foundation 🏋️‍♀️💼</b>, and a fun-loving traveler who is always ready for the next adventure ✈️🌄.</p>
-                                <p>I am super glad our paths crossed. Here’s to endless travel road trips, scaling Fit Foundation to the moon, and being absolute besties for life!</p>
+                    <!-- Hidden Letter Content -->
+                    <div class="letter-body-content" id="letterBody">
+                        <div class="letter-greeting">
+                            Dearest <span class="custom-name">Anshika</span> 🌸,
+                        </div>
+
+                        <div class="letter-text">
+                            <p>
+                                Pehle toh ek baat bohot dhyan se suno: <b>Past ko bilkul bhul jao!</b> Jo bhi tha tumhara past, mujhe nahi pata, aur sach kahun toh usse koi farq bhi nahi padta.
+                            </p>
+                            <p>
+                                Life ek bohot khoobsurat canvas hai, aur purane panno ko palat-palat kar dekhne se aane wala kal badalta nahi. Jo beet gaya wo sirf ek chhota sa chapter tha, poori kitaab nahi! Tumhara aane wala har pal naye rangon aur muskurahaton se bhara hona chahiye.
+                            </p>
+                            
+                            <div class="letter-highlight-quote">
+                                "चाहे जो भी था कल, उसे आज पे हावी मत होने देना...<br>
+                                तुम्हारी ये प्यारी सी खिलखिलाती हंसी, इस दुनिया की सबसे कीमती चीज है अंशिका! बस ऐसे ही हमेशा मस्त रहा करो! ✨"
                             </div>
-                            <div class="letter-ps">
-                                <b>P.S.</b> Reading this letter automatically entitles you to 1 free travel itinerary, post-workout protein treat, and lifetime hype support! 🚀🔥
+
+                            <p>
+                                I just want one promise from you: No matter what happens, no matter how chaotic life gets — <b>hamesha mast raha karo aur bina kisi rukawat ke khilkhilati raha karo!</b> You deserve all the peace, all the giggles, and all the happiness this world has to offer.
+                            </p>
+                            <p>
+                                Remember, anytime you ever feel low or start overthinking, this best friend is always right here with terrible jokes, endless support, and a big cup of hot coffee! ☕🍕
+                            </p>
+                        </div>
+
+                        <div class="letter-sign">
+                            Always Cheering For You,<br>
+                            <span id="displaySenderSign">Your Best Friend ❤️✨</span>
+                        </div>
+
+                        <!-- Worry Shredder Ritual -->
+                        <div class="worry-burner-box">
+                            <h4 style="color: #ffbe0b; font-size: 1.15rem; margin-bottom: 6px;">
+                                <i class="fa-solid fa-fire-flame-curved"></i> The "Delete Past Worries" Shredder
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.92rem;">
+                                Type any past memory, sadness, or overthinking thought below and watch it vanish into sparkling stardust forever!
+                            </p>
+                            <div class="burner-input-group">
+                                <input type="text" class="burner-input" id="worryInput" placeholder="Type any past worry here (e.g. overthinking, old sadness)...">
+                                <button class="btn btn-primary" id="shredWorryBtn" style="padding: 10px 24px; border-radius: 50px;">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i> Dissolve & Smile!
+                                </button>
                             </div>
-                            <div class="letter-sign">
-                                Your Newest Bestie,<br>
-                                <span id="displaySenderName">Your Friend ❤️</span>
+                            <div id="shredFeedback" style="margin-top: 14px; font-size: 0.95rem; color: #00f0ff; font-weight: 600; display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================================================
+           3. SOULFUL HINDI SHAYARIS & QUOTES
+           ========================================================================== -->
+        <section class="shayari-section" id="shayari">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-pill"><i class="fa-solid fa-feather"></i> शायरी और एहसास</span>
+                    <h2 class="section-title">Shayaris For Your Radiant Smile</h2>
+                    <p class="section-subtitle">Heartfelt verses reminding you to let go of yesterday and shine bright today 🌸✨</p>
+                </div>
+
+                <div class="shayari-grid">
+                    <!-- Shayari 1 -->
+                    <div class="shayari-card">
+                        <div class="shayari-quote-mark">“</div>
+                        <div>
+                            <div class="shayari-hindi">
+                                "जो बीत गया वो कल था,<br>
+                                ये जो मुस्कुरा रहा है वो तुम्हारा आज है...<br>
+                                छोड़ो कल की परवाह अंशिका,<br>
+                                तुम्हारी हंसी ही इस दुनिया का सबसे प्यारा साज़ है!"
+                            </div>
+                            <div class="shayari-translation">
+                                "Yesterday is gone with the wind; today smiles with you. Forget the past, Anshika — your laugh is the universe's sweetest melody!"
+                            </div>
+                        </div>
+                        <div class="shayari-footer">
+                            <span class="shayari-tag">🌸 Khilkhilati Muskaan</span>
+                            <div class="shayari-actions">
+                                <button class="mini-btn" onclick="copyShayari(this, 'जो बीत गया वो कल था, ये जो मुस्कुरा रहा है वो तुम्हारा आज है... छोड़ो कल की परवाह अंशिका, तुम्हारी हंसी ही इस दुनिया का सबसे प्यारा साज़ है!')" title="Copy Shayari">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <button class="mini-btn" onclick="heartShayari(this)" title="Love this">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shayari 2 -->
+                    <div class="shayari-card">
+                        <div class="shayari-quote-mark">“</div>
+                        <div>
+                            <div class="shayari-hindi">
+                                "कल की फिक्र में आज की हंसी मत खोना,<br>
+                                तू अनमोल है अंशिका, कभी उदास मत होना...<br>
+                                राहों में खुशियां बिछी हैं तेरे स्वागत में,<br>
+                                बस हर पल में बेफिक्र होकर मस्त रहना!"
+                            </div>
+                            <div class="shayari-translation">
+                                "Never sacrifice today's joy for yesterday's shadows. You are priceless, Anshika — live freely, carefree and joyous!"
+                            </div>
+                        </div>
+                        <div class="shayari-footer">
+                            <span class="shayari-tag">✨ Carefree Life</span>
+                            <div class="shayari-actions">
+                                <button class="mini-btn" onclick="copyShayari(this, 'कल की फिक्र में आज की हंसी मत खोना, तू अनमोल है अंशिका, कभी उदास मत होना!')" title="Copy Shayari">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <button class="mini-btn" onclick="heartShayari(this)" title="Love this">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shayari 3 -->
+                    <div class="shayari-card">
+                        <div class="shayari-quote-mark">“</div>
+                        <div>
+                            <div class="shayari-hindi">
+                                "दोस्ती वो नहीं जो बीते कल के पन्ने खोले,<br>
+                                दोस्ती तो वो है जो हर हाल में साथ हो ले...<br>
+                                चाहे जैसा भी रहा हो तुम्हारा कल,<br>
+                                हम हर मोड़ पे खड़े हैं तुम्हारे लिए!"
+                            </div>
+                            <div class="shayari-translation">
+                                "True friendship doesn't dwell on the past; it stands unwaveringly beside you in every chapter yet to come!"
+                            </div>
+                        </div>
+                        <div class="shayari-footer">
+                            <span class="shayari-tag">🤝 Lifelong Dost</span>
+                            <div class="shayari-actions">
+                                <button class="mini-btn" onclick="copyShayari(this, 'दोस्ती वो नहीं जो बीते कल के पन्ने खोले, दोस्ती तो वो है जो हर हाल में साथ हो ले!')" title="Copy Shayari">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <button class="mini-btn" onclick="heartShayari(this)" title="Love this">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shayari 4 -->
+                    <div class="shayari-card">
+                        <div class="shayari-quote-mark">“</div>
+                        <div>
+                            <div class="shayari-hindi">
+                                "हजारों गम हों जिंदगी में मगर,<br>
+                                जब तू खिलखिला कर मुस्कुराती है...<br>
+                                कसम से अंशिका, तेरी एक हंसी ही<br>
+                                हर परेशानी को चुटकी में मिटा जाती है!"
+                            </div>
+                            <div class="shayari-translation">
+                                "No matter what clouds exist, whenever you burst into laughter, all troubles vanish in an instant!"
+                            </div>
+                        </div>
+                        <div class="shayari-footer">
+                            <span class="shayari-tag">☀️ Pure Sunshine</span>
+                            <div class="shayari-actions">
+                                <button class="mini-btn" onclick="copyShayari(this, 'हजारों गम हों जिंदगी में मगर, जब तू खिलखिला कर मुस्कुराती है!')" title="Copy Shayari">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <button class="mini-btn" onclick="heartShayari(this)" title="Love this">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shayari 5 -->
+                    <div class="shayari-card">
+                        <div class="shayari-quote-mark">“</div>
+                        <div>
+                            <div class="shayari-hindi">
+                                "ना शिकवा करो बीते दिनों का,<br>
+                                ना आने वाले कल का डर रखो...<br>
+                                ये खूबसूरत लम्हा तुम्हारा है,<br>
+                                बस चेहरे पे हमेशा ये नूरानी मुस्कान रखो!"
+                            </div>
+                            <div class="shayari-translation">
+                                "Neither regret what's gone, nor fear what lies ahead. This radiant moment is yours — keep shining with pride!"
+                            </div>
+                        </div>
+                        <div class="shayari-footer">
+                            <span class="shayari-tag">👑 Queen Energy</span>
+                            <div class="shayari-actions">
+                                <button class="mini-btn" onclick="copyShayari(this, 'ना शिकवा करो बीते दिनों का, ना आने वाले कल का डर रखो...'))" title="Copy Shayari">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <button class="mini-btn" onclick="heartShayari(this)" title="Love this">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shayari 6 -->
+                    <div class="shayari-card">
+                        <div class="shayari-quote-mark">“</div>
+                        <div>
+                            <div class="shayari-hindi">
+                                "चांदनी भी शरमा जाए तेरे नूर के आगे,<br>
+                                जब तू दिल खोल के खिलखिलाती है...<br>
+                                भगवान तेरी जिंदगी में इतनी खुशियां भर दे,<br>
+                                जितनी तेरे चेहरे पे चमक नजर आती है!"
+                            </div>
+                            <div class="shayari-translation">
+                                "May the universe shower you with as much endless happiness as the brilliant sparkle in your eyes!"
+                            </div>
+                        </div>
+                        <div class="shayari-footer">
+                            <span class="shayari-tag">💫 Dua & Pyaar</span>
+                            <div class="shayari-actions">
+                                <button class="mini-btn" onclick="copyShayari(this, 'चांदनी भी शरमा जाए तेरे नूर के आगे, जब तू दिल खोल के खिलखिलाती है!')" title="Copy Shayari">
+                                    <i class="fa-solid fa-copy"></i>
+                                </button>
+                                <button class="mini-btn" onclick="heartShayari(this)" title="Love this">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1252,196 +1878,194 @@
         </section>
 
 
-        <!-- 3. UNCROPPED POLAROID MEMORY GALLERY -->
-        <section id="gallery">
+        <!-- ==========================================================================
+           4. ANSHIKA'S FULL UNCROPPED MEMORY & AURA GALLERY (ALL 4 IMAGES)
+           ========================================================================== -->
+        <section class="gallery-section" id="gallery">
             <div class="container">
                 <div class="section-header">
-                    <span class="badge-pill"><i class="fa-solid fa-camera"></i> Full View Photos</span>
-                    <h2 class="section-title">Nishita's Snapshot Gallery</h2>
-                    <p class="section-subtitle">Every photo presented in full uncropped glory! 📸✨ (Click any photo to zoom in)</p>
+                    <span class="badge-pill"><i class="fa-solid fa-camera"></i> Snapshot Moments</span>
+                    <h2 class="section-title">Anshika's Polaroid Gallery</h2>
+                    <p class="section-subtitle">Presented in full uncropped glory! Click any snapshot to zoom into high definition 📸✨</p>
                 </div>
 
                 <div class="gallery-grid">
-                    <!-- Polaroid 1 -->
-                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.13 AM.jpeg', 'Nishita in her full shining element! ✨', 'Wanderlust Explorer ✈️')">
+                    <!-- Photo 1: 1.jpeg -->
+                    <div class="polaroid-card" onclick="openLightbox('images/1.jpeg', 'The Sunshine Smile 🌸', 'Candid grace in peach traditional attire, pure warmth!')">
                         <div class="polaroid-tape"></div>
                         <div class="polaroid-img-wrapper">
-                            <!-- UNCROPPED IMAGE -->
-                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.13 AM.jpeg" alt="Nishita Snapshot 1" class="polaroid-img">
+                            <img src="images/1.jpeg" alt="Anshika Traditional Smile" class="polaroid-img" loading="lazy">
                         </div>
-                        <div class="polaroid-caption">Pure Magic ✨</div>
-                        <center><span class="polaroid-tag">Wanderlust Explorer ✈️</span></center>
+                        <div class="polaroid-caption">Sunshine Smile 🌸</div>
+                        <div class="polaroid-sub">Khilkhilati, joyful and effortless warmth</div>
+                        <span class="polaroid-tag-badge">Radiant Soul ✨</span>
                     </div>
 
-                    <!-- Polaroid 2 -->
-                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.13 AM (1).jpeg', 'Founder Energy @ Fit Foundation! 🏋️‍♀️💼', 'Startup Boss 🚀')">
+                    <!-- Photo 2: 2.jpeg -->
+                    <div class="polaroid-card" onclick="openLightbox('images/2.jpeg', 'Rockstar on the Rocks ⛰️', 'Chill mountain vibes, cozy sweater, stylish & carefree!')">
                         <div class="polaroid-tape"></div>
                         <div class="polaroid-img-wrapper">
-                            <!-- UNCROPPED IMAGE -->
-                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.13 AM (1).jpeg" alt="Nishita Snapshot 2" class="polaroid-img">
+                            <img src="images/2.jpeg" alt="Anshika Mountain Vibes" class="polaroid-img" loading="lazy">
                         </div>
-                        <div class="polaroid-caption">Boss Energy 💼</div>
-                        <center><span class="polaroid-tag">Founder @ Fit Foundation 🏋️‍♀️</span></center>
+                        <div class="polaroid-caption">Carefree Vibes ⛰️</div>
+                        <div class="polaroid-sub">Sitting high, thoughtful, cool and grounded</div>
+                        <span class="polaroid-tag-badge">Adventure Spirit 🌿</span>
                     </div>
 
-                    <!-- Polaroid 3 -->
-                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.14 AM.jpeg', 'Don\'t mess with a Taekwondo champion! 🥋💥', 'Black Belt Vibes 🥋')">
+                    <!-- Photo 3: 3.jpeg -->
+                    <div class="polaroid-card" onclick="openLightbox('images/3.jpeg', 'Golden Hour Glow ☀️', 'Soaking in the sun with peace, elegance and serene bliss')">
                         <div class="polaroid-tape"></div>
                         <div class="polaroid-img-wrapper">
-                            <!-- UNCROPPED IMAGE -->
-                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.14 AM.jpeg" alt="Nishita Snapshot 3" class="polaroid-img">
+                            <img src="images/3.jpeg" alt="Anshika Golden Hour" class="polaroid-img" loading="lazy">
                         </div>
-                        <div class="polaroid-caption">Fierce Fighter 🥋</div>
-                        <center><span class="polaroid-tag">Taekwondo Champion 🔥</span></center>
+                        <div class="polaroid-caption">Golden Hour Glow ☀️</div>
+                        <div class="polaroid-sub">Basking in sunlight, serenity in saree</div>
+                        <span class="polaroid-tag-badge">Grace & Peace 🕊️</span>
                     </div>
 
-                    <!-- Polaroid 4 -->
-                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.14 AM (1).jpeg', 'Always ready for spontaneous road trips & travel! 🚗💨', 'Adventure Buddy 🌄')">
+                    <!-- Photo 4: WhatsApp Image -->
+                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-21 at 7.33.36 PM.jpeg', 'Regal Palace Grace 👑', 'Standing tall with royal poise among ornate pillars!')">
                         <div class="polaroid-tape"></div>
                         <div class="polaroid-img-wrapper">
-                            <!-- UNCROPPED IMAGE -->
-                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.14 AM (1).jpeg" alt="Nishita Snapshot 4" class="polaroid-img">
+                            <img src="images/WhatsApp Image 2026-09-21 at 7.33.36 PM.jpeg" alt="Anshika Regal Poise" class="polaroid-img" loading="lazy">
                         </div>
-                        <div class="polaroid-caption">Adventure Time 🌄</div>
-                        <center><span class="polaroid-tag">Travel Nomad ✈️</span></center>
-                    </div>
-
-                    <!-- Polaroid 5 -->
-                    <div class="polaroid-card" onclick="openLightbox('images/WhatsApp Image 2026-09-04 at 11.33.14 AM (2).jpeg', 'Met 2 days ago, besties for life! 👯‍♀️💖', 'Instant Connection ⚡')">
-                        <div class="polaroid-tape"></div>
-                        <div class="polaroid-img-wrapper">
-                            <!-- UNCROPPED IMAGE -->
-                            <img src="images/WhatsApp Image 2026-09-04 at 11.33.14 AM (2).jpeg" alt="Nishita Snapshot 5" class="polaroid-img">
-                        </div>
-                        <div class="polaroid-caption">Bestie Bond 👯‍♀️</div>
-                        <center><span class="polaroid-tag">Bestie For Life 💖</span></center>
+                        <div class="polaroid-caption">Regal Grace 👑</div>
+                        <div class="polaroid-sub">Poised, confident and majestic timeless charm</div>
+                        <span class="polaroid-tag-badge">Royal Elegance 🏛️</span>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- 4. "THE NISHITA SPECIAL" FLIP CARDS -->
-        <section id="reasons">
+        <!-- ==========================================================================
+           5. BESTIE JOKES & LAUGHTER GENERATOR ("हंसी का फव्वारा")
+           ========================================================================== -->
+        <section class="jokes-section" id="jokes">
             <div class="container">
                 <div class="section-header">
-                    <span class="badge-pill"><i class="fa-solid fa-crown"></i> Identity Spotlight</span>
-                    <h2 class="section-title">What Makes Nishita Iconic? ⚡</h2>
-                    <p class="section-subtitle">Tap any card to reveal her superhuman bestie traits! 🥋🔥</p>
+                    <span class="badge-pill"><i class="fa-solid fa-face-laugh-beam"></i> Unlimited Smiles</span>
+                    <h2 class="section-title">The "Hasi Ka Fawwara" Generator 😂</h2>
+                    <p class="section-subtitle">Warning: Uncontrollable giggles ahead! Tap below to roll through hilarious bestie banter and jokes!</p>
                 </div>
 
-                <div class="reasons-grid">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-front">
-                                <i class="fa-solid fa-user-ninja"></i>
-                                <h3>The Taekwondo Martial Artist 🥋</h3>
+                <!-- Interactive Joke Box -->
+                <div class="joke-interactive-card">
+                    <div class="joke-icon-floating" id="jokeEmoji">🤣</div>
+                    
+                    <div class="joke-display-box">
+                        <div>
+                            <div class="joke-text" id="jokeText">
+                                "Scientifically proven fact: 99% of Anshika's overthinking can be cured by: 1. Garam chai/coffee ☕, 2. Ek badhiya pizza slice 🍕, and 3. Mujhe phone karke apni saari bak-bak shuru karna! 📞🤪"
                             </div>
-                            <div class="flip-back">
-                                <p>"Warning: Nishita can high-kick you into next week! Powerful, disciplined, and fearless athlete energy!"</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-front">
-                                <i class="fa-solid fa-building-user"></i>
-                                <h3>Founder @ Fit Foundation 🏋️‍♀️</h3>
-                            </div>
-                            <div class="flip-back">
-                                <p>"Running her startup Fit Foundation like a total boss! Transforming lives, fitness, and leading with passion!"</p>
+                            <div class="joke-subtext" id="jokeSubtext">
+                                — Universal Bestie Law #1
                             </div>
                         </div>
                     </div>
 
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-front">
-                                <i class="fa-solid fa-route"></i>
-                                <h3>Wanderlust Traveler ✈️</h3>
-                            </div>
-                            <div class="flip-back">
-                                <p>"Ghumna is life! Show her a mountain or a beach, and her bags are packed in 5 minutes flat!"</p>
-                            </div>
-                        </div>
+                    <div class="jokes-btn-row">
+                        <button class="btn btn-primary" id="nextJokeBtn">
+                            <i class="fa-solid fa-shuffle"></i> Give Me Another Joke! 💥
+                        </button>
+                        <button class="btn btn-secondary" id="laughSoundBtn">
+                            <i class="fa-solid fa-volume-high"></i> Play Giggling Sound 🎵
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3 Relatable Bestie Banter Cards -->
+                <div class="banter-grid">
+                    <div class="banter-card">
+                        <h4><i class="fa-solid fa-heart-crack" style="color: #ff2d75;"></i> Past vs. Anshika's Smile</h4>
+                        <p>Past is like bad Wi-Fi... jitna connect karne ki koshish karoge utna dimag kharab hoga! Forget that old network, you're currently running on 5G Happiness! 🚀📶</p>
                     </div>
 
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-front">
-                                <i class="fa-solid fa-bolt"></i>
-                                <h3>The '2-Day' Connection ⚡</h3>
-                            </div>
-                            <div class="flip-back">
-                                <p>"Met just 2 days ago, but the vibe check passed so fast it feels like we've been besties since childhood!"</p>
-                            </div>
-                        </div>
+                    <div class="banter-card">
+                        <h4><i class="fa-solid fa-person-falling" style="color: #ffbe0b;"></i> True Friendship Clause</h4>
+                        <p>If you ever trip and fall: I will first laugh my heart out for 3 minutes straight, take a selfie for the memories, and then pull you up like a loyal bodyguard! 🤝📸</p>
                     </div>
 
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-front">
-                                <i class="fa-solid fa-face-laugh-beam"></i>
-                                <h3>Chief Hype Person 🚀</h3>
-                            </div>
-                            <div class="flip-back">
-                                <p>"Brings 100% positive energy, high-octane laughter, and zero drama wherever she goes!"</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-front">
-                                <i class="fa-solid fa-gem"></i>
-                                <h3>One In A Million 💎</h3>
-                            </div>
-                            <div class="flip-back">
-                                <p>"Smart, strong, athletic, ambitious, and super fun — truly the ultimate bestie combination!"</p>
-                            </div>
-                        </div>
+                    <div class="banter-card">
+                        <h4><i class="fa-solid fa-mug-hot" style="color: #00f0ff;"></i> Anti-Sadness Protocol</h4>
+                        <p>Agar kabhi udaas hone ka khayal bhi aaye, toh penalty lagegi: You will have to send 5 funny stickers and listen to my non-stop comedy podcast on call! 🎧🍕</p>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- 5. BESTIE VIBE-O-METER 3000 -->
-        <section id="lovemeter">
+        <!-- ==========================================================================
+           6. MOOD BOOSTER & BESTIE SYNERGY VIBE-O-METER
+           ========================================================================== -->
+        <section class="booster-section" id="booster">
             <div class="container">
                 <div class="section-header">
-                    <span class="badge-pill"><i class="fa-solid fa-gauge-high"></i> Friendship Synergy</span>
-                    <h2 class="section-title">The Bestie Vibe-o-Meter ⚡</h2>
-                    <p class="section-subtitle">Press the button to calculate Nishita & My friendship frequency!</p>
+                    <span class="badge-pill"><i class="fa-solid fa-wand-magic"></i> Emergency Sunshine</span>
+                    <h2 class="section-title">The Anshika Mood Booster ⚡</h2>
+                    <p class="section-subtitle">Choose how you're feeling right now for an instant surge of positive energy and reminders!</p>
                 </div>
 
-                <div class="love-meter-box glass-card">
-                    <div class="meter-dial-container">
-                        <div class="meter-circle"></div>
-                        <div class="meter-display">
-                            <span id="meterPercent">0%</span>
-                            <span class="meter-sub">Synergy</span>
-                        </div>
+                <!-- Mood Booster Action Grid -->
+                <div class="booster-grid">
+                    <div class="booster-tile" onclick="triggerBooster('overthinking')">
+                        <i class="fa-solid fa-brain" style="color: #a855f7;"></i>
+                        <h4>Overthinking?</h4>
+                        <p>Tap to hit the mental reset button!</p>
                     </div>
 
-                    <div class="meter-status-text" id="meterStatus">Ready to scan friendship frequency...</div>
+                    <div class="booster-tile" onclick="triggerBooster('past')">
+                        <i class="fa-solid fa-trash-can" style="color: #ff2d75;"></i>
+                        <h4>Remembering Past?</h4>
+                        <p>Tap to flush old memories away!</p>
+                    </div>
 
-                    <button class="btn btn-primary" id="startMeterBtn">
-                        <i class="fa-solid fa-bolt"></i> Calculate Bestie Synergy ⚡
+                    <div class="booster-tile" onclick="triggerBooster('hype')">
+                        <i class="fa-solid fa-bullhorn" style="color: #ffbe0b;"></i>
+                        <h4>Need Instant Hype?</h4>
+                        <p>Tap to hear how awesome you are!</p>
+                    </div>
+
+                    <div class="booster-tile" onclick="triggerBooster('coffee')">
+                        <i class="fa-solid fa-mug-saucer" style="color: #ff9a3c;"></i>
+                        <h4>Virtual Coffee Treat</h4>
+                        <p>Tap for a warm virtual hug & treat!</p>
+                    </div>
+                </div>
+
+                <!-- Bestie Vibe-O-Meter -->
+                <div class="glass-card vibe-meter-box">
+                    <h3 style="font-family: var(--font-title); font-size: clamp(1.4rem, 3.5vw, 1.8rem); margin-bottom: 8px; color: var(--secondary);">
+                        The Khilkhilati Vibe-O-Meter ⚡
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 22px;">
+                        Hit calculate to scan your happiness and friendship synergy frequency!
+                    </p>
+
+                    <div class="meter-dial">
+                        <div class="meter-num" id="meterValue">0%</div>
+                        <div class="meter-label">Khilkhilahat</div>
+                    </div>
+
+                    <div class="meter-status" id="meterStatus">Click below to start synergy scanner...</div>
+
+                    <button class="btn btn-primary" id="scanMeterBtn">
+                        <i class="fa-solid fa-bolt"></i> Scan Friendship Synergy ⚡
                     </button>
                 </div>
             </div>
         </section>
 
 
-        <!-- 6. REDEEMABLE BESTIE VOUCHERS -->
-        <section id="coupons">
+        <!-- ==========================================================================
+           7. REDEEMABLE BESTIE VOUCHERS
+           ========================================================================== -->
+        <section class="coupons-section" id="coupons">
             <div class="container">
                 <div class="section-header">
-                    <span class="badge-pill"><i class="fa-solid fa-ticket"></i> Non-Transferable</span>
-                    <h2 class="section-title">Nishita's Bestie Vouchers 🎟️</h2>
-                    <p class="section-subtitle">Click to redeem anytime! Guaranteed 100% fulfillment 🫡</p>
+                    <span class="badge-pill"><i class="fa-solid fa-ticket-simple"></i> 100% Guaranteed</span>
+                    <h2 class="section-title">Anshika's Lifetime Vouchers 🎟️</h2>
+                    <p class="section-subtitle">Non-transferable bestie passes! Click to redeem anytime — valid for eternity!</p>
                 </div>
 
                 <div class="coupons-grid">
@@ -1449,183 +2073,186 @@
                     <div class="coupon-card" id="coupon1">
                         <div class="coupon-stamp">REDEEMED</div>
                         <div>
-                            <div class="coupon-header">
-                                <span class="coupon-badge">Travel</span>
-                                <i class="fa-solid fa-plane" style="color: var(--secondary);"></i>
+                            <div class="coupon-top">
+                                <span class="coupon-pill">Peace of Mind</span>
+                                <i class="fa-solid fa-trash-can" style="color: var(--primary);"></i>
                             </div>
-                            <h3 class="coupon-title">Free Travel Buddy Pass ✈️</h3>
-                            <p class="coupon-desc">You pick the destination, and I'll handle the itinerary, snacks, and playlist!</p>
+                            <div class="coupon-title">Past Worry Shredder Pass 🛡️</div>
+                            <div class="coupon-desc">Whenever any past thought bugs you, show this voucher and I will delete it with funny gossip & distractions!</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon1', 'Travel Buddy Pass')">Redeem Voucher 🎟️</button>
+                        <button class="btn btn-secondary" onclick="redeemVoucher('coupon1', 'Past Worry Shredder Pass')">Redeem Voucher 🎟️</button>
                     </div>
 
                     <!-- Coupon 2 -->
                     <div class="coupon-card" id="coupon2">
                         <div class="coupon-stamp">REDEEMED</div>
                         <div>
-                            <div class="coupon-header">
-                                <span class="coupon-badge">Startup</span>
-                                <i class="fa-solid fa-dumbbell" style="color: var(--accent-gold);"></i>
+                            <div class="coupon-top">
+                                <span class="coupon-pill">Food & Treats</span>
+                                <i class="fa-solid fa-mug-hot" style="color: var(--secondary);"></i>
                             </div>
-                            <h3 class="coupon-title">Fit Foundation Post-Workout Treat 🏋️‍♀️</h3>
-                            <p class="coupon-desc">Entitles you to a delicious smoothie or coffee treat after a hard workout day!</p>
+                            <div class="coupon-title">Emergency Chai / Coffee Treat ☕</div>
+                            <div class="coupon-desc">Entitles you to 1 hot cappuccino, dessert, or favorite snack on me anytime you're having a tiring day!</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon2', 'Fit Foundation Treat')">Redeem Voucher 🎟️</button>
+                        <button class="btn btn-secondary" onclick="redeemVoucher('coupon2', 'Emergency Chai / Coffee Treat')">Redeem Voucher 🎟️</button>
                     </div>
 
                     <!-- Coupon 3 -->
                     <div class="coupon-card" id="coupon3">
                         <div class="coupon-stamp">REDEEMED</div>
                         <div>
-                            <div class="coupon-header">
-                                <span class="coupon-badge">Taekwondo</span>
-                                <i class="fa-solid fa-user-ninja" style="color: var(--primary);"></i>
+                            <div class="coupon-top">
+                                <span class="coupon-pill">Late Night</span>
+                                <i class="fa-solid fa-phone" style="color: var(--accent-gold);"></i>
                             </div>
-                            <h3 class="coupon-title">Punching Bag Duty 🥋</h3>
-                            <p class="coupon-desc">I will hold the sparring pads for your Taekwondo kicks (and promise not to cry!).</p>
+                            <div class="coupon-title">2 AM Non-Judgemental Rant 📞</div>
+                            <div class="coupon-desc">Got something on your mind at 2 AM? Call and vent freely without any unsolicited advice!</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon3', 'Punching Bag Duty')">Redeem Voucher 🎟️</button>
+                        <button class="btn btn-secondary" onclick="redeemVoucher('coupon3', '2 AM Non-Judgemental Rant')">Redeem Voucher 🎟️</button>
                     </div>
 
                     <!-- Coupon 4 -->
                     <div class="coupon-card" id="coupon4">
                         <div class="coupon-stamp">REDEEMED</div>
                         <div>
-                            <div class="coupon-header">
-                                <span class="coupon-badge">Hype</span>
-                                <i class="fa-solid fa-lightbulb" style="color: #4cc9f0;"></i>
+                            <div class="coupon-top">
+                                <span class="coupon-pill">Adventures</span>
+                                <i class="fa-solid fa-car-side" style="color: #00f0ff;"></i>
                             </div>
-                            <h3 class="coupon-title">2 AM Startup Brainstorming 💡</h3>
-                            <p class="coupon-desc">Got a wild idea for Fit Foundation at 2 AM? Call me and we will build the plan!</p>
+                            <div class="coupon-title">Spontaneous Road Trip & Chai 🚗</div>
+                            <div class="coupon-desc">Any weekend you need fresh air, pack your bag and let's go on a scenic drive with good music!</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon4', '2 AM Brainstorming')">Redeem Voucher 🎟️</button>
+                        <button class="btn btn-secondary" onclick="redeemVoucher('coupon4', 'Spontaneous Road Trip & Chai')">Redeem Voucher 🎟️</button>
                     </div>
 
                     <!-- Coupon 5 -->
                     <div class="coupon-card" id="coupon5">
                         <div class="coupon-stamp">REDEEMED</div>
                         <div>
-                            <div class="coupon-header">
-                                <span class="coupon-badge">Support</span>
-                                <i class="fa-solid fa-bullhorn" style="color: #7209b7;"></i>
+                            <div class="coupon-top">
+                                <span class="coupon-pill">Laughter</span>
+                                <i class="fa-solid fa-box-open" style="color: #a855f7;"></i>
                             </div>
-                            <h3 class="coupon-title">Unlimited Hype Person 📣</h3>
-                            <p class="coupon-desc">Whenever you launch a project or beat a goal, I will celebrate & cheer loudest!</p>
+                            <div class="coupon-title">Meme & Joke Delivery On Demand 📦</div>
+                            <div class="coupon-desc">Feeling bored? Tap this pass and receive an instant pack of 10 hilarious memes to make you laugh!</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon5', 'Unlimited Hype Person')">Redeem Voucher 🎟️</button>
+                        <button class="btn btn-secondary" onclick="redeemVoucher('coupon5', 'Meme & Joke Delivery')">Redeem Voucher 🎟️</button>
                     </div>
 
                     <!-- Coupon 6 -->
                     <div class="coupon-card" id="coupon6">
                         <div class="coupon-stamp">REDEEMED</div>
                         <div>
-                            <div class="coupon-header">
-                                <span class="coupon-badge">Fun</span>
-                                <i class="fa-solid fa-utensils" style="color: var(--accent-gold);"></i>
+                            <div class="coupon-top">
+                                <span class="coupon-pill">Support</span>
+                                <i class="fa-solid fa-star" style="color: #ffbe0b;"></i>
                             </div>
-                            <h3 class="coupon-title">Food & Coffee Treat Pass ☕</h3>
-                            <p class="coupon-desc">Claim 1 free coffee or meal on me anytime you're working hard!</p>
+                            <div class="coupon-title">Personal Hype Cheerleader 📣</div>
+                            <div class="coupon-desc">Whenever you tackle any exam, goal, or life milestone, I will cheer the loudest for you!</div>
                         </div>
-                        <button class="btn btn-secondary" onclick="redeemCoupon('coupon6', 'Food & Coffee Treat')">Redeem Voucher 🎟️</button>
+                        <button class="btn btn-secondary" onclick="redeemVoucher('coupon6', 'Personal Hype Cheerleader')">Redeem Voucher 🎟️</button>
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- 7. THE BESTIE PROPOSAL ("BESTIES FOR LIFE?") -->
-        <section class="proposal-section" id="proposal">
+        <!-- ==========================================================================
+           8. THE ULTIMATE FRIENDSHIP PACT ("PROMISE TO STAY KHILKHILATI?")
+           ========================================================================== -->
+        <section class="pact-section" id="pact">
             <div class="container">
-                <div class="proposal-box glass-card">
-                    <h2 class="proposal-title">Besties For Life, Nishita? 👯‍♀️✨</h2>
-                    <p class="proposal-text">
-                        We met 2 days ago, but the vibe is 100% matched! Are we locked in as official lifelong best friends?
+                <div class="pact-card">
+                    <h2 class="pact-title">The Sacred Bestie Promise 👯‍♀️✨</h2>
+                    <p class="pact-text">
+                        "Past ko piche chhodkar, kya tum wada karti ho ki hamesha aisi hi khilkhilati aur mast rahogi, Anshika?"
                     </p>
 
-                    <div class="proposal-actions">
-                        <button class="btn btn-primary btn-yes" id="proposalYesBtn">
-                            <i class="fa-solid fa-thumbs-up"></i> YES, BESTIES FOR LIFE! 👯‍♀️
+                    <div class="pact-actions" id="pactActionsBox">
+                        <button class="btn btn-primary btn-yes" id="pactYesBtn">
+                            <i class="fa-solid fa-thumbs-up"></i> HAAN, I PROMISE TO ALWAYS SMILE! 💖
                         </button>
-                        
-                        <!-- Evasive running No button -->
-                        <button class="btn btn-no" id="proposalNoBtn">
-                            No 😜
+
+                        <!-- Mischievous runaway No button with bounded safe dodge -->
+                        <button class="btn btn-no" id="pactNoBtn">
+                            Nahi 😜
                         </button>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
+
     <!-- FOOTER -->
-    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-glass); color: var(--text-muted); font-size: 0.95rem;">
-        <p>Crafted with high energy & bestie love for <span id="footerGirl">Nishita Sharma</span> • Founder @ Fit Foundation 🏋️‍♀️✨</p>
-        <p style="font-size: 0.8rem; margin-top: 8px; opacity: 0.7;">Besties Since Day 1 • 2026</p>
+    <footer>
+        <div class="container">
+            <p>Crafted with endless admiration, joy & bestie love for <b style="color: #fff;">Anshika Khandelwal</b> 🌸</p>
+            <p style="font-size: 0.85rem; opacity: 0.75;">"Past is history, future is a mystery, and your laughter is pure magic!" • Made with <i class="fa-solid fa-heart footer-heart"></i></p>
+        </div>
     </footer>
 
 
-    <!-- MODALS & DRAWERS -->
+    <!-- ==========================================================================
+       MODALS & DRAWERS
+       ========================================================================== -->
 
-    <!-- Lightbox Photo Modal (FULL UNCROPPED VIEW) -->
+    <!-- 1. FULL UNCROPPED LIGHTBOX PHOTO MODAL -->
     <div class="lightbox-modal" id="lightboxModal">
-        <div class="lightbox-content">
-            <div class="lightbox-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></div>
-            <!-- Full Image -->
-            <img src="" alt="Nishita Photo Lightbox" class="lightbox-img" id="lightboxImg">
-            <h3 style="font-family: var(--font-title); font-size: 1.5rem; margin-top: 18px; color: var(--secondary);" id="lightboxCaption">Caption</h3>
-            <p style="color: #666; font-size: 0.95rem; margin-top: 6px;" id="lightboxTag">Tag</p>
+        <div class="lightbox-box">
+            <button class="lightbox-close-btn" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="lightbox-img-wrapper">
+                <img src="" alt="Full view" id="lightboxImg">
+            </div>
+            <div class="lightbox-caption-text" id="lightboxCaption">Caption</div>
+            <div class="lightbox-tag-text" id="lightboxTag">Tag</div>
         </div>
     </div>
 
-    <!-- Official Bestie Certificate Modal -->
-    <div class="certificate-modal" id="certModal">
-        <div class="certificate-card">
-            <div class="cert-header">🏆 Official Certificate of Ultimate Besties 🏆</div>
-            <p style="font-size: 1.1rem; color: #555; margin-top: 10px;">This certifies that</p>
-            <div class="cert-name" id="certGirlName">Nishita Sharma</div>
-            <p style="font-size: 1.2rem; color: #2b1b17; margin: 15px 0;">
-                (Taekwondo Fighter 🥋 • Founder of Fit Foundation 🏋️‍♀️ • Wanderlust Explorer ✈️)<br>
-                is officially declared as the coolest, most badass lifelong best friend!
-            </p>
-            <div style="margin-top: 25px; display: flex; justify-content: space-around; font-family: var(--font-script); font-size: 1.8rem; color: #800f2f;">
-                <div>Signed: <span id="certSenderName">Your Bestie</span></div>
-                <div>Status: Vibe Locked 🔒✨</div>
+
+    <!-- 2. OFFICIAL DEGREE / CERTIFICATE MODAL -->
+    <div class="cert-modal" id="certModal">
+        <div class="cert-sheet">
+            <div class="cert-sheet-header">🏆 Official Best Friend Certificate 🏆</div>
+            <p style="font-size: 1.05rem; color: #666; margin-top: 6px;">This honor is proudly awarded to</p>
+            <div class="cert-sheet-name" id="certGirlName">Anshika Khandelwal</div>
+            <div class="cert-sheet-desc">
+                For possessing the most infectious, radiant <b>"Khilkhilati"</b> smile on earth, for officially leaving all past worries behind, and for being declared the coolest, most cherished bestie in the universe!
             </div>
-            <button class="btn btn-primary" style="margin-top: 30px;" onclick="closeCertModal()">
-                Celebrate Friendship 🎉✨
+            <div class="cert-signatures">
+                <div>Signed: <span id="certSenderName">Your Best Friend</span> ✍️</div>
+                <div>Status: Vibe Locked Forever 🔒✨</div>
+            </div>
+            <button class="btn btn-primary" style="margin-top: 25px;" onclick="closeCertModal()">
+                <i class="fa-solid fa-sparkles"></i> Lock In Friendship Forever! 🎉
             </button>
         </div>
     </div>
 
-    <!-- Personalizer Drawer -->
+
+    <!-- 3. PERSONALIZER DRAWER -->
     <div class="drawer-overlay" id="drawerOverlay">
-        <div class="drawer-card">
+        <div class="drawer-panel">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
-                <h3 style="font-family: var(--font-title); font-size: 1.4rem; color: var(--secondary);">
+                <h3 style="font-family: var(--font-title); font-size: 1.35rem; color: var(--secondary);">
                     <i class="fa-solid fa-sliders"></i> Personalize SPA
                 </h3>
                 <button class="icon-btn" id="closeDrawerBtn"><i class="fa-solid fa-xmark"></i></button>
             </div>
 
             <form id="settingsForm">
-                <div class="form-group">
-                    <label>Her Name:</label>
-                    <input type="text" class="form-input" id="inputGirlName" value="Nishita Sharma">
+                <div class="form-item">
+                    <label>Bestie's Full Name:</label>
+                    <input type="text" id="inputGirlName" value="Anshika Khandelwal">
                 </div>
 
-                <div class="form-group">
-                    <label>Your Name:</label>
-                    <input type="text" class="form-input" id="inputSenderName" value="Your Bestie">
+                <div class="form-item">
+                    <label>Your Name / Signature:</label>
+                    <input type="text" id="inputSenderName" value="Your Best Friend ❤️">
                 </div>
 
-                <div class="form-group">
-                    <label>Met Date:</label>
-                    <input type="date" class="form-input" id="inputStartDate" value="2026-09-02">
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
-                    <i class="fa-solid fa-floppy-disk"></i> Save & Update ✨
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">
+                    <i class="fa-solid fa-floppy-disk"></i> Save & Refresh ✨
                 </button>
             </form>
         </div>
@@ -1633,46 +2260,40 @@
 
 
     <!-- ==========================================================================
-       JAVASCRIPT LOGIC
+       JAVASCRIPT LOGIC & WEB AUDIO ENGINE
        ========================================================================== -->
     <script>
+        /* 1. STATE MANAGEMENT */
         const defaultState = {
-            girlName: "Nishita Sharma 💖✨",
-            senderName: "Your Bestie ❤️",
-            startDate: "2026-09-02T00:00:00"
+            girlName: "Anshika Khandelwal",
+            senderName: "Your Best Friend ❤️"
         };
-
         let state = { ...defaultState };
 
         function loadState() {
-            const saved = localStorage.getItem('nishita_spa_state');
+            const saved = localStorage.getItem('anshika_bestie_state');
             if (saved) {
                 try { state = { ...defaultState, ...JSON.parse(saved) }; } catch(e) {}
             }
-            updateDOMWithState();
+            updateDOM();
         }
 
         function saveState() {
-            localStorage.setItem('nishita_spa_state', JSON.stringify(state));
-            updateDOMWithState();
+            localStorage.setItem('anshika_bestie_state', JSON.stringify(state));
+            updateDOM();
         }
 
-        function updateDOMWithState() {
-            document.getElementById('navGirlName').textContent = state.girlName.replace(/[^a-zA-Z\s]/g, '').trim() || "Nishita Sharma";
-            document.getElementById('displayGirlName').textContent = state.girlName;
-            document.getElementById('displaySenderName').textContent = state.senderName;
-            document.getElementById('footerGirl').textContent = state.girlName;
+        function updateDOM() {
+            document.getElementById('displayGirlName').textContent = state.girlName + " 🌸✨";
+            document.querySelectorAll('.custom-name').forEach(el => el.textContent = state.girlName);
             document.getElementById('certGirlName').textContent = state.girlName;
+            document.getElementById('displaySenderSign').textContent = state.senderName;
             document.getElementById('certSenderName').textContent = state.senderName;
-            
             document.getElementById('inputGirlName').value = state.girlName;
             document.getElementById('inputSenderName').value = state.senderName;
-            if(state.startDate) {
-                document.getElementById('inputStartDate').value = state.startDate.split('T')[0];
-            }
         }
 
-        /* Canvas Floating Particles */
+        /* 2. BACKGROUND CANVAS PARTICLES (Responsive & Optimized) */
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let width = canvas.width = window.innerWidth;
@@ -1683,33 +2304,43 @@
             height = canvas.height = window.innerHeight;
         });
 
-        class StarParticle {
+        class Particle {
             constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * width;
-                this.y = height + Math.random() * 80;
-                this.size = Math.random() * 8 + 4;
-                this.speedY = Math.random() * 1.5 + 0.6;
-                this.opacity = Math.random() * 0.7 + 0.3;
-                this.color = Math.random() > 0.5 ? '#05d9e8' : '#ff2a6d';
+                this.y = height + Math.random() * 40;
+                this.size = Math.random() * 5 + 3;
+                this.speedY = Math.random() * 1.1 + 0.4;
+                this.speedX = (Math.random() - 0.5) * 0.6;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.type = Math.random() > 0.35 ? 'circle' : 'flower';
+                const colors = ['#ff2d75', '#ff9a3c', '#ffbe0b', '#00f0ff', '#a855f7'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
             }
             update() {
                 this.y -= this.speedY;
-                this.x += Math.sin(this.y * 0.01) * 0.6;
+                this.x += Math.sin(this.y * 0.02) * 0.5 + this.speedX;
                 if (this.y < -20) this.reset();
             }
             draw() {
                 ctx.save();
                 ctx.globalAlpha = this.opacity;
                 ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
-                ctx.fill();
+                if (this.type === 'circle') {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.font = `${this.size * 1.8}px sans-serif`;
+                    ctx.fillText('🌸', this.x, this.y);
+                }
                 ctx.restore();
             }
         }
 
-        const particles = Array.from({ length: 40 }, () => new StarParticle());
+        // Adjust particle density based on screen size
+        const particleCount = window.innerWidth < 768 ? 25 : 45;
+        const particles = Array.from({ length: particleCount }, () => new Particle());
         function animateCanvas() {
             ctx.clearRect(0, 0, width, height);
             particles.forEach(p => { p.update(); p.draw(); });
@@ -1717,44 +2348,76 @@
         }
         animateCanvas();
 
-        /* Meeting Timer (2 Days) */
-        function updateMeetingTimer() {
-            const start = new Date(state.startDate || "2026-09-02").getTime();
-            const now = new Date().getTime();
-            const diff = Math.max(0, now - start);
+        /* 3. MOBILE MENU TOGGLE */
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNavMenu = document.getElementById('mobileNavMenu');
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        mobileMenuBtn.addEventListener('click', () => {
+            playAudioPop();
+            mobileNavMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileNavMenu.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
 
-            document.getElementById('countDays').textContent = String(days).padStart(2, '0');
-            document.getElementById('countHours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('countMins').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('countSecs').textContent = String(seconds).padStart(2, '0');
+        function closeMobileMenu() {
+            mobileNavMenu.classList.remove('active');
+            mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars';
         }
-        setInterval(updateMeetingTimer, 1000);
-        updateMeetingTimer();
 
-        /* Wax Seal Letter Toggle */
+        /* 4. WAX SEAL INTERACTION */
+        const waxSealWrapper = document.getElementById('waxSealWrapper');
         const waxSeal = document.getElementById('waxSeal');
         const letterBody = document.getElementById('letterBody');
 
-        waxSeal.addEventListener('click', () => {
+        waxSealWrapper.addEventListener('click', () => {
             playAudioChime();
-            waxSeal.style.transform = 'scale(0.8) rotate(-20deg)';
+            waxSeal.style.transform = 'scale(0.8) rotate(-25deg)';
             waxSeal.style.opacity = '0';
             setTimeout(() => {
-                waxSeal.style.display = 'none';
+                waxSealWrapper.style.display = 'none';
                 letterBody.style.display = 'block';
-                confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
+                confetti({
+                    particleCount: 75,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: ['#ff2d75', '#ffbe0b', '#ff9a3c', '#00f0ff']
+                });
             }, 300);
         });
 
-        /* Lightbox for Gallery */
-        function openLightbox(imgSrc, caption, tag) {
+        /* 5. WORRY SHREDDER RITUAL */
+        const shredBtn = document.getElementById('shredWorryBtn');
+        const worryInput = document.getElementById('worryInput');
+        const shredFeedback = document.getElementById('shredFeedback');
+
+        shredBtn.addEventListener('click', () => {
+            const val = worryInput.value.trim();
+            if (!val) {
+                alert("Please enter a thought or word to shred!");
+                return;
+            }
             playAudioPop();
-            document.getElementById('lightboxImg').src = imgSrc;
+            worryInput.value = '';
+            shredFeedback.style.display = 'block';
+            shredFeedback.innerHTML = `✨ "${val}" was dissolved into thin air! Remember: Your smile is 100x bigger than any past worry! 😊`;
+            confetti({
+                particleCount: 45,
+                spread: 60,
+                origin: { y: 0.7 }
+            });
+            setTimeout(() => {
+                shredFeedback.style.display = 'none';
+            }, 6000);
+        });
+
+        /* 6. LIGHTBOX MODAL */
+        function openLightbox(src, caption, tag) {
+            playAudioPop();
+            document.getElementById('lightboxImg').src = src;
             document.getElementById('lightboxCaption').textContent = caption;
             document.getElementById('lightboxTag').textContent = tag;
             document.getElementById('lightboxModal').classList.add('active');
@@ -1763,79 +2426,164 @@
             document.getElementById('lightboxModal').classList.remove('active');
         }
 
-        /* Vibe-o-Meter Logic */
-        const startMeterBtn = document.getElementById('startMeterBtn');
-        const meterPercent = document.getElementById('meterPercent');
+        /* 7. JOKES & LAUGHTER ROTATOR */
+        const jokesList = [
+            {
+                emoji: "🤣",
+                text: "Past is like a broken phone screen... bar-bar dekhoge toh ungli mein chot hi lagegi! Isse achha screen saaf karo aur mast front camera khol ke selfie lo Anshika! 📸😂",
+                sub: "— Tech-Support for Bestie's Heart"
+            },
+            {
+                emoji: "🍕",
+                text: "Scientifically proven: 99% of Anshika's overthinking can be cured by: 1. Ek garam cup chai/coffee ☕, 2. Ek cheesy pizza 🍕, aur 3. Mujhe phone lagakar non-stop gossiping karna! 📞🤪",
+                sub: "— Universal Bestie Law #1"
+            },
+            {
+                emoji: "😜",
+                text: "Doctor: Aapko itna hasne ki aadat kab se hai?\nAnshika: Jab se pata chala ki udaas rehne se na toh past badalta hai aur na hi glow badhta hai! ✨😂",
+                sub: "— Skin Glow Secrets 101"
+            },
+            {
+                emoji: "💃",
+                text: "Rule of Best Friends: If you do something foolish, I won't stop you... I will record the video in 4K 60fps so we can laugh at it when we are 80 years old! 🎥🍿",
+                sub: "— Lifetime Comedy Vault"
+            },
+            {
+                emoji: "🍟",
+                text: "Overthinking karne se calories burn hoti toh ab tak Anshika size zero ho chuki hoti! So stop overthinking and start eating french fries! 🍟😋",
+                sub: "— Nutritionist Bestie Advice"
+            },
+            {
+                emoji: "🚀",
+                text: "Past ko bhulna itna zaroori hai jaise phone ka cache clear karna... varna phone hang hota hai aur yahan tumhara sweet smile hang ho jata hai! Keep it running super fast! ⚡✨",
+                sub: "— Android / iOS Friendship Protocol"
+            }
+        ];
+        let currentJokeIdx = 0;
+
+        document.getElementById('nextJokeBtn').addEventListener('click', () => {
+            playAudioPop();
+            currentJokeIdx = (currentJokeIdx + 1) % jokesList.length;
+            const joke = jokesList[currentJokeIdx];
+            document.getElementById('jokeEmoji').textContent = joke.emoji;
+            document.getElementById('jokeText').textContent = joke.text;
+            document.getElementById('jokeSubtext').textContent = joke.sub;
+            confetti({ particleCount: 30, spread: 50, origin: { y: 0.6 } });
+        });
+
+        document.getElementById('laughSoundBtn').addEventListener('click', () => {
+            playLaughMelody();
+        });
+
+        /* 8. COPY & HEART SHAYARIS */
+        function copyShayari(btn, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                playAudioPop();
+                btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                setTimeout(() => btn.innerHTML = '<i class="fa-solid fa-copy"></i>', 2000);
+            });
+        }
+        function heartShayari(btn) {
+            playAudioChime();
+            btn.style.color = '#ff2d75';
+            btn.style.transform = 'scale(1.25)';
+            confetti({ particleCount: 20, spread: 40, origin: { y: 0.7 } });
+            setTimeout(() => btn.style.transform = 'scale(1)', 300);
+        }
+
+        /* 9. MOOD BOOSTER ACTIONS */
+        function triggerBooster(type) {
+            playAudioChime();
+            let msg = "";
+            if (type === 'overthinking') {
+                msg = "🛑 HALT! Take a deep breath. 90% of what you're worrying about hasn't even happened and never will! Go wash your face, drink water, and smile!";
+            } else if (type === 'past') {
+                msg = "🕊️ Past is a ghost, Anshika! It can't touch your bright present or dazzling future. Flush it down and shine like the queen you are!";
+            } else if (type === 'hype') {
+                msg = "👑 HYPE CHECK: Anshika Khandelwal is kind, smart, resilient, and possesses a million-dollar khilkhilati smile! Walk with your crown tall!";
+            } else if (type === 'coffee') {
+                msg = "☕ *Ding!* 1 Virtual Caramel Macchiato with extra whipped cream delivered to your heart! Zero calories, 100% warm friendship love!";
+            }
+            alert(msg);
+            confetti({ particleCount: 35, spread: 60, origin: { y: 0.6 } });
+        }
+
+        /* 10. VIBE-O-METER LOGIC */
+        const scanMeterBtn = document.getElementById('scanMeterBtn');
+        const meterValue = document.getElementById('meterValue');
         const meterStatus = document.getElementById('meterStatus');
 
-        startMeterBtn.addEventListener('click', () => {
-            startMeterBtn.disabled = true;
-            meterStatus.textContent = "Scanning friendship frequency...";
+        scanMeterBtn.addEventListener('click', () => {
+            scanMeterBtn.disabled = true;
+            meterStatus.textContent = "Scanning Anshika's happiness frequency...";
             let current = 0;
 
             const interval = setInterval(() => {
-                current += Math.floor(Math.random() * 20) + 5;
+                current += Math.floor(Math.random() * 25) + 8;
                 playAudioBeep(current);
 
                 if (current < 100) {
-                    meterPercent.textContent = current + '%';
+                    meterValue.textContent = current + '%';
                 } else if (current >= 100 && current < 9999) {
-                    meterStatus.textContent = "⚡ Friendship synergy breaking the scale!";
-                    meterPercent.textContent = current + '%';
+                    meterStatus.textContent = "⚡ Synergies exceeding limits! Pure joy detected!";
+                    meterValue.textContent = current + '%';
                 } else {
                     clearInterval(interval);
-                    meterPercent.textContent = "1,000,000%";
-                    meterStatus.textContent = "🚀 MAXIMUM SYNERGY ACHIEVED! Besties For Life!";
-                    startMeterBtn.disabled = false;
-                    confetti({ particleCount: 120, spread: 100, origin: { y: 0.6 } });
+                    meterValue.textContent = "1,000,000%";
+                    meterStatus.textContent = "🚀 MAXIMUM HAPPINESS REACHED! Khilkhilati Queen Confirmed!";
+                    scanMeterBtn.disabled = false;
+                    confetti({ particleCount: 100, spread: 90, origin: { y: 0.6 } });
                 }
             }, 60);
         });
 
-        /* Coupons Logic */
-        function redeemCoupon(couponId, title) {
-            const card = document.getElementById(couponId);
-            if(card.classList.contains('redeemed')) return;
-
+        /* 11. COUPONS REDEMPTION */
+        function redeemVoucher(id, title) {
+            const card = document.getElementById(id);
+            if (card.classList.contains('redeemed')) return;
             card.classList.add('redeemed');
             playAudioChime();
-            confetti({ particleCount: 70, spread: 70, origin: { y: 0.7 } });
-            alert(`🎟️ Voucher Redeemed!\n\nYou claimed: "${title}".\nScreenshot this pass to claim your reward anytime! 🚀✨`);
+            confetti({ particleCount: 50, spread: 65, origin: { y: 0.7 } });
+            alert(`🎟️ Voucher Redeemed!\n\nYou claimed: "${title}".\nScreenshot this pass to claim your reward anytime! Valid for life! 🚀✨`);
         }
 
-        /* Runaway No Button & Proposal YES */
-        const noBtn = document.getElementById('proposalNoBtn');
-        const yesBtn = document.getElementById('proposalYesBtn');
+        /* 12. SAFE BOUNDED DODGING "NO" BUTTON */
+        const noBtn = document.getElementById('pactNoBtn');
+        const yesBtn = document.getElementById('pactYesBtn');
         const certModal = document.getElementById('certModal');
+        const pactBox = document.getElementById('pactActionsBox');
 
-        const funnyTaunts = [
-            "Are you sure? 🥺",
-            "Wrong button Nishita! 😜",
-            "Nope! Try again!",
-            "Besties forever, no escape!",
-            "Nice try! Taekwondo speed! 🥋",
+        const runawayTaunts = [
+            "Arre Anshika ji, galat button! 😜",
+            "Nahi ka option hi nahi hai! 😂",
+            "Are you sure? Try again! 🌸",
+            "Button bhaag raha hai! 🏃‍♀️",
+            "Khilkhilana compulsory hai! 😊",
             "Press YES already! 🎉",
-            "Error 404: No option unavailable!"
+            "Error 404: Sadness Not Found! ✨"
         ];
-        let tauntIndex = 0;
+        let tauntIdx = 0;
 
         function dodgeNoButton() {
             playAudioPop();
-            const x = Math.random() * (window.innerWidth - 160) - (window.innerWidth / 2 - 80);
-            const y = Math.random() * 300 - 150;
-            noBtn.style.position = 'relative';
-            noBtn.style.transform = `translate(${x}px, ${y}px) scale(0.9)`;
-            noBtn.textContent = funnyTaunts[tauntIndex];
-            tauntIndex = (tauntIndex + 1) % funnyTaunts.length;
+            // Bound strictly to ensure NO horizontal overflow on mobile
+            const maxDeltaX = Math.min(80, window.innerWidth * 0.2);
+            const maxDeltaY = 60;
+            const x = (Math.random() - 0.5) * (maxDeltaX * 2);
+            const y = (Math.random() - 0.5) * (maxDeltaY * 2);
+
+            noBtn.style.transform = `translate(${x}px, ${y}px) scale(0.92)`;
+            noBtn.textContent = runawayTaunts[tauntIdx];
+            tauntIdx = (tauntIdx + 1) % runawayTaunts.length;
         }
 
         noBtn.addEventListener('mouseenter', dodgeNoButton);
         noBtn.addEventListener('touchstart', (e) => { e.preventDefault(); dodgeNoButton(); });
 
         yesBtn.addEventListener('click', () => {
-            playVictoryFanfare();
+            playFanfare();
             certModal.classList.add('active');
-            const end = Date.now() + (3 * 1000);
+            const end = Date.now() + (3.5 * 1000);
             (function frame() {
                 confetti({ particleCount: 6, angle: 60, spread: 55, origin: { x: 0 } });
                 confetti({ particleCount: 6, angle: 120, spread: 55, origin: { x: 1 } });
@@ -1843,9 +2591,22 @@
             })();
         });
 
-        function closeCertModal() { certModal.classList.remove('active'); }
+        function closeCertModal() {
+            certModal.classList.remove('active');
+        }
 
-        /* Personalizer Drawer */
+        /* 13. HEART SHOWER BUTTON */
+        document.getElementById('heartShowerBtn').addEventListener('click', () => {
+            playAudioChime();
+            confetti({
+                particleCount: 80,
+                spread: 90,
+                origin: { y: 0.4 },
+                colors: ['#ff2d75', '#ffbe0b', '#00f0ff', '#a855f7']
+            });
+        });
+
+        /* 14. DRAWER TOGGLE & FORM */
         const openDrawerBtn = document.getElementById('openDrawerBtn');
         const closeDrawerBtn = document.getElementById('closeDrawerBtn');
         const drawerOverlay = document.getElementById('drawerOverlay');
@@ -1854,21 +2615,20 @@
         openDrawerBtn.addEventListener('click', () => drawerOverlay.classList.add('active'));
         closeDrawerBtn.addEventListener('click', () => drawerOverlay.classList.remove('active'));
         drawerOverlay.addEventListener('click', (e) => {
-            if(e.target === drawerOverlay) drawerOverlay.classList.remove('active');
+            if (e.target === drawerOverlay) drawerOverlay.classList.remove('active');
         });
 
         settingsForm.addEventListener('submit', (e) => {
             e.preventDefault();
             state.girlName = document.getElementById('inputGirlName').value || defaultState.girlName;
             state.senderName = document.getElementById('inputSenderName').value || defaultState.senderName;
-            const dateVal = document.getElementById('inputStartDate').value;
-            if(dateVal) state.startDate = dateVal + 'T00:00:00';
             saveState();
             drawerOverlay.classList.remove('active');
             playAudioChime();
+            alert("✨ Personalization saved successfully!");
         });
 
-        /* Web Audio API Sound Effects */
+        /* 15. WEB AUDIO API SYNTHESIZER (MUSIC & SFX) */
         let audioCtx = null;
         function getAudioContext() {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1881,9 +2641,9 @@
                 const ctx = getAudioContext();
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
-                osc.frequency.setValueAtTime(400, ctx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.08);
-                gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                osc.frequency.setValueAtTime(450, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(850, ctx.currentTime + 0.08);
+                gain.gain.setValueAtTime(0.18, ctx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.08);
                 osc.connect(gain); gain.connect(ctx.destination);
                 osc.start(); osc.stop(ctx.currentTime + 0.08);
@@ -1898,11 +2658,11 @@
                     const gain = ctx.createGain();
                     osc.type = 'triangle';
                     osc.frequency.value = freq;
-                    gain.gain.setValueAtTime(0.15, ctx.currentTime + i * 0.08);
-                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.08 + 0.4);
+                    gain.gain.setValueAtTime(0.1, ctx.currentTime + i * 0.08);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.08 + 0.35);
                     osc.connect(gain); gain.connect(ctx.destination);
                     osc.start(ctx.currentTime + i * 0.08);
-                    osc.stop(ctx.currentTime + i * 0.08 + 0.4);
+                    osc.stop(ctx.currentTime + i * 0.08 + 0.35);
                 });
             } catch(e) {}
         }
@@ -1912,45 +2672,100 @@
                 const ctx = getAudioContext();
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
-                osc.frequency.value = 300 + (val * 2);
-                gain.gain.setValueAtTime(0.05, ctx.currentTime);
+                osc.frequency.value = 350 + (val * 1.5);
+                gain.gain.setValueAtTime(0.035, ctx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
                 osc.connect(gain); gain.connect(ctx.destination);
                 osc.start(); osc.stop(ctx.currentTime + 0.05);
             } catch(e) {}
         }
 
-        function playVictoryFanfare() {
+        function playFanfare() {
             try {
                 const ctx = getAudioContext();
                 [523.25, 659.25, 783.99, 1046.50, 1318.51].forEach((freq, i) => {
                     const osc = ctx.createOscillator();
                     const gain = ctx.createGain();
+                    osc.type = 'sine';
                     osc.frequency.value = freq;
-                    gain.gain.setValueAtTime(0.2, ctx.currentTime + i * 0.1);
-                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.1 + 0.5);
+                    gain.gain.setValueAtTime(0.16, ctx.currentTime + i * 0.09);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.09 + 0.5);
                     osc.connect(gain); gain.connect(ctx.destination);
-                    osc.start(ctx.currentTime + i * 0.1);
-                    osc.stop(ctx.currentTime + i * 0.1 + 0.5);
+                    osc.start(ctx.currentTime + i * 0.09);
+                    osc.stop(ctx.currentTime + i * 0.09 + 0.5);
                 });
             } catch(e) {}
         }
 
+        function playLaughMelody() {
+            try {
+                const ctx = getAudioContext();
+                [600, 750, 600, 850, 700, 950].forEach((freq, i) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sawtooth';
+                    osc.frequency.value = freq;
+                    gain.gain.setValueAtTime(0.07, ctx.currentTime + i * 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.1 + 0.15);
+                    osc.connect(gain); gain.connect(ctx.destination);
+                    osc.start(ctx.currentTime + i * 0.1);
+                    osc.stop(ctx.currentTime + i * 0.1 + 0.15);
+                });
+            } catch(e) {}
+        }
+
+        /* Ambient Lo-Fi Harmonic Loop */
         let isMusicPlaying = false;
+        let musicTimer = null;
         const musicToggleBtn = document.getElementById('musicToggleBtn');
+
+        const lofiChords = [
+            [261.63, 329.63, 392.00, 493.88], // Cmaj7
+            [220.00, 261.63, 329.63, 392.00], // Am7
+            [349.23, 440.00, 523.25, 659.25], // Fmaj7
+            [392.00, 493.88, 587.33, 698.46]  // G7
+        ];
+        let chordIdx = 0;
+
+        function playAmbientChord() {
+            if (!isMusicPlaying) return;
+            try {
+                const ctx = getAudioContext();
+                const chord = lofiChords[chordIdx];
+                chordIdx = (chordIdx + 1) % lofiChords.length;
+
+                chord.forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.value = freq;
+                    gain.gain.setValueAtTime(0.025, ctx.currentTime + idx * 0.04);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + idx * 0.04 + 2.2);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(ctx.currentTime + idx * 0.04);
+                    osc.stop(ctx.currentTime + idx * 0.04 + 2.2);
+                });
+            } catch(e) {}
+        }
+
         musicToggleBtn.addEventListener('click', () => {
+            getAudioContext();
             if (!isMusicPlaying) {
                 isMusicPlaying = true;
                 musicToggleBtn.style.background = 'var(--primary)';
                 musicToggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-                playAudioChime();
+                playAmbientChord();
+                musicTimer = setInterval(playAmbientChord, 2200);
             } else {
                 isMusicPlaying = false;
+                clearInterval(musicTimer);
                 musicToggleBtn.style.background = 'var(--bg-glass)';
                 musicToggleBtn.innerHTML = '<i class="fa-solid fa-music"></i>';
             }
         });
 
+        // Initialize state on page load
         loadState();
     </script>
 </body>
